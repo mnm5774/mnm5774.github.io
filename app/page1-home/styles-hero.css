@@ -2,7 +2,7 @@
 #hero {
   display: grid;
   justify-content: center;
-  background-image: url('photos-highres/stars1.jpg');
+  background-image: url('/photos-highres/stars1.jpg');
   background-size: cover;
   min-height: 36vw;
   background-repeat: no-repeat;
