@@ -1,0 +1,15 @@
+/* home page content. */
+#body {
+  display: grid;
+  font-family: Perpetua, TimesNewRoman;
+  margin: 0;
+  text-align: justify;
+  text-indent: 50px;
+  background-color: snow;
+  padding: 60px 30px 40px 30px;
+}
+
+  #body p {
+    font-size: 20px;
+    padding: 10px 0px 10px 0px;
+  }

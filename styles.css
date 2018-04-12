@@ -38,152 +38,6 @@ html {
 }
 
 
-/* navbar will be a totally separate grid for when we move to SPA.
-setup grid, then subgrid applies structure from parent. */
-.nav-logo {
-  grid-area: logo;
-}
-.nav-pic {
-  grid-area: pic;
-}
-.nav-page1 {
-  grid-area: home;
-}
-.nav-page2 {
-  grid-area: two;
-}
-.nav-page3 {
-  grid-area: three;
-}
-
-/* actual navbar */
-.nav-links {
-  display: grid;
-  grid-template-rows: 9vh;
-  grid-template-columns: 30% 40% 10% 10% 10%;
-  grid-template-areas:
-  "logo pic home two three";
-  justify-content: center;
-  overflow: hidden;
-  background-color: black;
-  padding-left: 60px;
-  padding-right: 60px;
-  font-size: 2.0vw;
-}
-
-  .nav-links a {
-    text-align: center;
-    text-decoration: none;
-    align-self: center;
-    color: snow;
-    padding: 10px;
-    font-family: TimesNewRoman;
-  }
-
-    .nav-links a:hover {
-      background-color: #ddd;
-      color: black;
-      border: 4px solid black;
-      overflow: hidden;
-    }
-
-  .nav-pic {
-    border: 2px solid darkgrey;
-    border-radius: 35%;
-    max-height: 35px;
-    align-self: center;
-    margin-left: 10px;
-  }
-
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-
-  /* to remove the abrupt transition to fixed on navbar--not currently working */
-  .sticky + .page-content {
-    padding-top: 60px;
-  }
-
-
-
-/* hero */
-#hero {
-  display: grid;
-  justify-content: center;
-  background-image: url('photos-highres/stars1.jpg');
-  background-size: cover;
-  min-height: 36vw;
-  background-repeat: no-repeat;
-  background-color: #222;
-  border: 7px;
-  border-color: darkgoldenrod;
-  border-style: hidden hidden outset hidden;
-}
-
-  .hero-header {
-    padding-top: 20px;
-    justify-self: center;
-    color: darkgrey;
-    text-rendering: optimizeLegibility;
-    text-shadow: 0px -7px black;
-    opacity: 0.5;
-    font-size: 5.0vw;
-    font-family: TimesNewRoman;
-  }
-
-  .hero-text {
-    font-family: TimesNewRoman;
-    font-size: 1.9vw;
-    align-self: end;
-    padding-bottom: 20px;
-    color: darkgoldenrod;
-  }
-
-
-
-
-#body {
-  display: grid;
-  font-family: Perpetua, TimesNewRoman;
-  margin: 0;
-  text-align: justify;
-  text-indent: 50px;
-  background-color: snow;
-  padding: 60px 30px 40px 30px;
-}
-
-  #body p {
-    font-size: 20px;
-    padding: 10px 0px 10px 0px;
-  }
-
-
-
-
-#footer {
-  display: inline-grid;
-  background-color: black;
-  color: grey;
-  border: 5px;
-  border-color:blue;
-  align-content: center;
-}
-
-  #footer img {
-    max-height: 70px;
-    border: 3px solid darkgrey;
-    justify-self: left;
-    margin: 20px 0px 20px 40px;
-  }
-
-  #footer a {
-    justify-self: right;
-    padding: 20px 40px 20px 0px;
-    color: snow;
-  }
-
 
 
 /* here we style the content using the generic classes, styling across
@@ -199,10 +53,6 @@ all pages. */
 }
 
 
-
-
-
-
 /* we need to style html inside the page-container here separately so
 that the CSS can be dynamically inserted when needed as well.
 this is for styling specific to a certain page. */
@@ -213,6 +63,3 @@ this is for styling specific to a certain page. */
   .about-header {
     font-size: 30px;
   }
-
-
-

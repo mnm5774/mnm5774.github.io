@@ -1,0 +1,21 @@
+#footer {
+  display: inline-grid;
+  background-color: black;
+  color: grey;
+  border: 5px;
+  border-color:blue;
+  align-content: center;
+}
+
+  #footer img {
+    max-height: 70px;
+    border: 3px solid darkgrey;
+    justify-self: left;
+    margin: 20px 0px 20px 40px;
+  }
+
+  #footer a {
+    justify-self: right;
+    padding: 20px 40px 20px 0px;
+    color: snow;
+  }
