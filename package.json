@@ -1,5 +1,5 @@
 {
-  "name": "the-showcase",
+  "name": "the-showcase-live",
   "description": "My portfolio.",
   "version": "1.0.0",
   "main": "index.html",
@@ -12,5 +12,5 @@
   "devDependencies": {
     "parcel-bundler": "^1.6.1"
   },
-  "keywords": ["portfolio", "vanilla js"]
+  "keywords": []
 }
