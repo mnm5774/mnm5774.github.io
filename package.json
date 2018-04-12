@@ -1,6 +1,6 @@
 {
-  "name": "the-showcase-pre",
-  "description": "My portfolio.",
+  "name": "portfolio-live",
+  "description": "Live site.",
   "version": "1.0.0",
   "main": "index.html",
   "author": "MM",
@@ -12,5 +12,5 @@
   "devDependencies": {
     "parcel-bundler": "^1.6.1"
   },
-  "keywords": []
+  "keywords": ["portfolio", "vanilla js"]
 }
