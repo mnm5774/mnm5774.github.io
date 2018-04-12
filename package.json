@@ -1,0 +1,16 @@
+{
+  "name": "the-showcase",
+  "description": "My portfolio.",
+  "version": "1.0.0",
+  "main": "index.html",
+  "author": "MM",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": ["portfolio", "vanilla js"]
+}
