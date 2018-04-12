@@ -75,7 +75,7 @@ var utils = (function () {
     return {
         router: function (route, data) {
         	// this sets the default route, when no route is passed.
-            route = route || Location.hash.slice(1) || 'home';
+            route = route || location.hash.slice(1) || 'home';
             console.log ('router invoked  ' + route + ' ' + data);
 
             // cookies?
