@@ -8,16 +8,20 @@ Might be able to solve the above by having an onload function in the HTML templa
 
 
 // For sticky navbar.
-// Get the navbar, using my library to create an object.
+// Get the elements, using my library to create an object.
 var navbar = MM (".nav-container");
+var hero = MM (".hero-container");
+
+// Create the variables needed to determine to add sticky class.
+var navStuckAt = (window.scrollY > hero.height);
 
 // Get the offset position of the navbar from top of page.
-var sticky = navbar.element.offsetTop;
+//var sticky = navbar.element.offsetTop;
 
 // Add the sticky class to the navbar when you reach its scroll position.
 // Remove "sticky" when you leave the scroll position.
-function navStuck () {
-  if (window.pageYOffset >= sticky) {
+function checkNav () {
+  if (navStuckAt) {
     navbar.addClass ("sticky")
   } else {
     navbar.removeClass ("sticky");
@@ -25,6 +29,7 @@ function navStuck () {
 };
 
 // When the user scrolls the page, execute function to determine sticky.
-window.addEventListener ('scroll', navStuck);
+// I may need to add a debounce later to this, due to performance issues.
+window.addEventListener ('scroll', checkNav);
 // When the page resizes, reset the sticky variable to be correct.
-window.addEventListener ('resize', function () {sticky = navbar.element.offsetTop});
+//window.addEventListener ('resize', function () {sticky = navbar.element.offsetTop});
