@@ -14,6 +14,7 @@ var hero = MM (".hero-container");
 
 // Create the variables needed to determine to add sticky class.
 var navStuckAt = (window.scrollY > hero.height);
+console.log (hero.height);
 
 // Get the offset position of the navbar from top of page.
 //var sticky = navbar.element.offsetTop;
