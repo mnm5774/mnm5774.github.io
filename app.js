@@ -13,15 +13,12 @@ var navbar = MM (".nav-container");
 var hero = MM (".hero-container");
 
 
-// Get the offset position of the navbar from top of page.
-//var sticky = navbar.element.offsetTop;
-
 // Add the sticky class to the navbar when you reach its scroll position.
 // Remove "sticky" when you leave the scroll position.
 function checkNav () {
   // Create the variables needed to determine to add sticky class.
   var navStuckAt = window.scrollY > hero.element.offsetHeight;
-  
+
   if (navStuckAt) {
     navbar.addClass ("sticky")
   } else {
@@ -29,8 +26,7 @@ function checkNav () {
   }
 };
 
+
 // When the user scrolls the page, execute function to determine sticky.
 // I may need to add a debounce later to this, due to performance issues.
 window.addEventListener ('scroll', checkNav);
-// When the page resizes, reset the sticky variable to be correct.
-//window.addEventListener ('resize', function () {sticky = navbar.element.offsetTop});
