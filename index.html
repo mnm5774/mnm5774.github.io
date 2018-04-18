@@ -113,7 +113,9 @@ onload = "utils.router (); utils.router ('navbar'); utils.router ('footer');">
 
 
 <!-- My library, a work in progress. These objects are hidden to the global object.
-	Note that this is separate from my SPA functionality. -->
+	Note that this is separate from my SPA functionality. 
+	Have these after app is loaded so that when variables are declared to manipulate
+	DOM, they are according to the loaded page. -->
 <script src="src/Glass-1.js"></script>
 <!-- Used for general js. Currently adds functionality for the sticky navbar.
 	NOT the root of SPA/framework either. -->
