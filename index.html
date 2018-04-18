@@ -90,13 +90,6 @@
 	Then calls render in the API. Render inserts the content. -->
 
 
-<!-- My library, a work in progress. These objects are hidden to the global object.
-	Note that this is separate from my SPA functionality. -->
-<script src="src/Glass-1.js"></script>
-<!-- Used for general js. Currently adds functionality for the sticky navbar.
-	NOT the root of SPA/framework either. -->
-<script src="app.js"></script>
-
 
 <!-- My SPA backbone. Could be considered the API? Unlike Glass, my utilities
 	are located on the global object. The onload events here are set to render
@@ -117,5 +110,14 @@
 <script src="app/utilities-1.js" 
 onload = "utils.router (); utils.router ('navbar'); utils.router ('footer');">
 </script>
+
+
+<!-- My library, a work in progress. These objects are hidden to the global object.
+	Note that this is separate from my SPA functionality. -->
+<script src="src/Glass-1.js"></script>
+<!-- Used for general js. Currently adds functionality for the sticky navbar.
+	NOT the root of SPA/framework either. -->
+<script src="app.js"></script>
+
 
 </html>
