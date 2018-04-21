@@ -64,7 +64,7 @@ var controllers = {
 		var js30 = page2Templates.js30;
 		var finalContent = js30;
 
-		utils.render ('code', finalContent);
+		utils.render ('body', finalContent);
 	},
 
 	resume: function (data, params) {
@@ -73,7 +73,7 @@ var controllers = {
 		var resume = page3Templates.resume;
 		var finalContent = resume;
 
-		utils.render ('resume', finalContent);
+		utils.render ('body', finalContent);
 	},
 
 	footer: function (data, params) {
