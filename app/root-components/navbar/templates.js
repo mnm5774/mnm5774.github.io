@@ -14,8 +14,8 @@ var navbarTemplates = {
           src="photos-lowres/profile.jpg" alt"profile">
 
         <a class="nav-page1" onclick="utils.router ()">Home</a>
-        <a class="nav-page2" onclick="utils.router (code)">Code</a>
-        <a class="nav-page3" onclick="utils.router (resume)">Resume</a>
+        <a class="nav-page2" onclick="utils.router ("code")">Code</a>
+        <a class="nav-page3" onclick="utils.router ("resume")">Resume</a>
       </div>
     `;
     return html;
