@@ -24,6 +24,12 @@ var views = {
 
 	code: function (pageView, data, params) {
 		var pageView = pageView;
+		utils.request (pageView);
+	},
+
+	resume: function (pageView, data, params) {
+		var pageView = pageView;
+		utils.request (pageView);
 	},
 
 	footer: function (pageView, data, params) {

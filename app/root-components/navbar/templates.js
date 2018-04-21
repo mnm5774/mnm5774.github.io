@@ -13,9 +13,9 @@ var navbarTemplates = {
         <img class="nav-pic" href="#page1-home" 
           src="photos-lowres/profile.jpg" alt"profile">
 
-        <a class="nav-page1" href="#page1-home">Home</a>
-        <a class="nav-page2" href="#page2-code">Code</a>
-        <a class="nav-page3" href="#page3-resume">Resume</a>
+        <a class="nav-page1" onclick="utils.router ()">Home</a>
+        <a class="nav-page2" onclick="utils.router (code)">Code</a>
+        <a class="nav-page3" onclick="utils.router (resume)">Resume</a>
       </div>
     `;
     return html;

@@ -58,6 +58,24 @@ var controllers = {
 		utils.render ('hero', heroContent);
 	},
 
+	code: function (data, params) {
+		console.log (data);
+
+		var js30 = page2Templates.js30;
+		var finalContent = js30;
+
+		utils.render ('code', finalContent);
+	},
+
+	resume: function (data, params) {
+		console.log (data);
+
+		var resume = page3Templates.resume;
+		var finalContent = resume;
+
+		utils.render ('resume', finalContent);
+	},
+
 	footer: function (data, params) {
 		console.log (data);
 
