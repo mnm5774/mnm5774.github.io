@@ -1,4 +1,4 @@
-var page3Templates {
+var page3Templates = {
   resume: function () {
     var html = `
       <link rel="stylesheet" href="app/page3-resume/styles.css">
