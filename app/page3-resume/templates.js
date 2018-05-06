@@ -2,10 +2,10 @@ var page3Templates = {
   resume: function () {
     var styles = {background: 'white', color: 'red'};
 
-    var test = MM.createElement ('div', ['class', 'id'], ['test-class', 'test-id'],
+    var test = MM.newElement ('div', ['class', 'id'], ['test-class', 'test-id'],
       ['background-color', 'color'], [styles.background, styles.color],
-        [MM.createElement ('div', ['class'], ['child-class']),
-        MM.createElement ('div', ['class'], ['child-two'])]
+        [MM.newElement ('div', ['class'], ['child-class']),
+        MM.newElement ('div', ['class'], ['child-two'])]
       );
 
     var html = `
