@@ -9,8 +9,10 @@ Might be able to solve the above by having an onload function in the HTML templa
 
 // For sticky navbar.
 // Get the elements, using my library to create an object.
-var navbar = MM (".nav-container").getElement ();
+var navbar = MM (".nav-container");
+navbar.getElement ();
 var hero = MM (".hero-container");
+hero.getElement ();
 
 
 // Add the sticky class to the navbar when you reach its scroll position.
