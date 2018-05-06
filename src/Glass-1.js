@@ -220,7 +220,9 @@ of code I learn and pick up as I do more study, and hands-on education.
 		// Container for writing actual DOM element, for ease of access.
 		that.element = '';
 		// Go ahead and write element, so we don't have to call this later.
-		that.getElement ();
+		// Taking this out, so we can create an object, then use it to create
+		// an element.
+		// that.getElement ();
 
 		return this;
 	};

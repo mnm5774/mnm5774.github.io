@@ -1,11 +1,12 @@
 var page3Templates = {
   resume: function () {
     var styles = {background: 'white', color: 'red'};
+    var obj = MM ();
 
-    var test = MM.newElement ('div', ['class', 'id'], ['test-class', 'test-id'],
+    var test = obj.newElement ('div', ['class', 'id'], ['test-class', 'test-id'],
       ['background-color', 'color'], [styles.background, styles.color],
-        [MM.newElement ('div', ['class'], ['child-class']),
-        MM.newElement ('div', ['class'], ['child-two'])]
+        [obj.newElement ('div', ['class'], ['child-class']),
+        obj.newElement ('div', ['class'], ['child-two'])]
       );
 
     var html = `
