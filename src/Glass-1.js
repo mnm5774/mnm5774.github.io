@@ -57,9 +57,10 @@ of code I learn and pick up as I do more study, and hands-on education.
 	Also, I'm still not real clear on my purpose for having this entire library.
 	*/
 
-	// not being used
-	var properties = {
-		offsetTop: '',
+	// sample styles for now.
+	var navbarStyles = {
+		backgroundColor: "blue",
+		color: "red"
 	};
 
 
@@ -156,27 +157,43 @@ of code I learn and pick up as I do more study, and hands-on education.
 		},
 
 
-		// setOffset for stickyNav
-		setOffsetTop: function () {
-			properties.offsetTop = this.element.offsetTop;
-		},
+		// Main function used for creating the elements in my SPA.
+		// Note: children is mainly just a placeholder. If we want nested elements,
+		// just call newElement as an argument to create child tags.
+		// For now we can only add one property/value, and one style. Will have to add
+		// funcitonality for an array being fed so we can handle large sets of code.
+		newElement: function (type, properties, propVals, styleProps, styleVals, children) {
+			// create element.
+			var parent = document.createElement (type);
 
-		// Function for making my navbar sticky once your scroll positions it at the
-		// top of the window.
-		stickyNav: function () {
-			// Get the offset position of the navbar
-			this.setOffsetTop ();
-			var space = properties.offsetTop;
-			console.log (space);
+			// add properties.
+			function addProps (properties, propVals) {
+				properties.forEach (function (prop) {
+					var index = properties.indexOf (prop);
+					var value = propVals [index];
 
-			if (window.pageYOffset >= space) {
-			    this.addClass("sticky");
-			} else {this.removeClass("sticky")}
+					parent.setAttribute (prop, value);
+				});
+			};
 
-			return this;
-		},
+			// add styles.
+			function addStyles (styleProps, styleVals) {
+				styleProps.forEach (function (prop) {
+					var index = styleProps.indexOf (prop);
+					var value = styleVals [index];
 
+					parent.style.prop = value;
+				});
+			};
 
+			// add child HTML.
+			function addChildren (children) {
+				children.forEach (function (child) {
+					parent.appendChild (children);
+				});
+			};
+			
+		}
 
 	};
 
