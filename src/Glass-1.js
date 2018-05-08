@@ -194,8 +194,12 @@ of code I learn and pick up as I do more study, and hands-on education.
 			};
 
 			addProps (properties, propVals);
-			addStyles (styleProps, styleVals);
-			addChildren (children);
+
+			if (typeOf (styleProps) === 'Array') {
+				addStyles (styleProps, styleVals);}
+
+			if (typeOf (children) === 'Array') {
+				addChildren (children);}
 
 			return parent;
 			
