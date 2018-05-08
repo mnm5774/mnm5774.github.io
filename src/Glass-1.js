@@ -193,9 +193,9 @@ of code I learn and pick up as I do more study, and hands-on education.
 				});
 			};
 
-			addProps ();
-			addStyles ();
-			addChildren ();
+			addProps (properties, propVals);
+			addStyles (styleProps, styleVals);
+			addChildren (children);
 
 			return parent;
 			
