@@ -162,7 +162,10 @@ of code I learn and pick up as I do more study, and hands-on education.
 		// just call newElement as an argument to create child tags.
 		// For now we can only add one property/value, and one style. Will have to add
 		// funcitonality for an array being fed so we can handle large sets of code.
-		newElement: function (type, properties, propVals, styleProps, styleVals, children) {
+		newElement: function (type,
+				properties = '', propVals = '',
+				styleProps = '', styleVals = '',
+				children = '') {
 			// create element.
 			var parent = document.createElement (type);
 
