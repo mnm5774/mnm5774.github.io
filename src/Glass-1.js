@@ -192,6 +192,8 @@ of code I learn and pick up as I do more study, and hands-on education.
 					parent.appendChild (children);
 				});
 			};
+
+			return parent;
 			
 		}
 
