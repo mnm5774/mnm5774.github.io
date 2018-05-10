@@ -36,6 +36,30 @@ of code I learn and pick up as I do more study, and hands-on education.
 	/* 4-11-18: The above comment on using arguments will probably change, as I become
 	more focused on the intent and purpose for having this library.
 	*/
+
+	/* 5-10-18: Similar to how React has a create-element function, this library now
+	has a newElement function. I think the main purpose for this library will be to create
+	the elements that will be used by my template JS (in the SPA functionality), prior
+	to the dynamic inserting and rendering of the content. This helps minimize the amount
+	of code written, and helps me focus on writing and understanding Javascript better,
+	instead of spending time writing markup. It also allows for easy invocation of
+	the library, for a new element, for writing code that is responsive to client
+	interaction.
+
+	Another note: by having everything centralized on JS (a programming language, as
+	opposed to a markup language), this allows for ease of integration with external sources,
+	such as databases, or APIs. Also provides seamless access to external sources. For
+	instance: if we have a list of items or data that is retreived externally upon client
+	request, and the connection is poor; the site doesn't attempt to refresh upon the request,
+	resulting in error, or missing elements. We could just have a default error message,
+	dynamically loading upon failure of the request, without dropping all of the content
+	already previously loaded. This allows the user to continue to browse site content,
+	and allows us to continue to request the desired content, without the client losing
+	the content. Also, hopefully, avoiding the dreaded loading spinner.
+	*/
+
+	// 5-10-18: I need to change the arguments here, and some of the outer structure,
+	// as these kinds of things will be handled internally by the functions and objects.
 	var version = 1.00;
 	var Glass = function (selector, id, innerHTML, name, value, style) {
 			return new Glass.init (selector, id, innerHTML, name, value, style);
@@ -57,7 +81,9 @@ of code I learn and pick up as I do more study, and hands-on education.
 	Also, I'm still not real clear on my purpose for having this entire library.
 	*/
 
-	// sample styles for now.
+	// 5-10-18: As we call the newElement function, I think we should have default styles
+	// here for new elements. As arguments are provided for new and different styles, these
+	// should be overwritten with the desired styles, and properties for the elements.
 	var navbarStyles = {
 		backgroundColor: "blue",
 		color: "red"
@@ -72,7 +98,12 @@ of code I learn and pick up as I do more study, and hands-on education.
 
 		// These methods will return the actual element in the DOM. Then we can edit them
 		// from there. These methods write the actual element to this.element. Once one
-		// of these is used, all we need to get the element is use this.element.
+		// of these is used, all we need to get the present DOM element is use this.element.
+
+		/* 5-10-18: When creating a new element, we need to apply this method so that
+		the element is available to the object after it is inserted. These will change
+		once we change the arguments passed initially to the library.
+		*/
 		getElement: function () {
 
 			// Had to remove logic for determining whether we already had a class or not.
@@ -135,37 +166,15 @@ of code I learn and pick up as I do more study, and hands-on education.
 
 
 
-		/* I'm going to have to rethink my structure on these functions I'm calling
-		from outside. There's lots of ways to set it up, like having a set class
-		naming convention, or allowing the class names to be passed to the function
-		as an argument. For now I'm not using any of these methods. 
-		*/
-
-		// This function takes a new class and adds that class for a mouse-hover action.
-		// This allows for any adjustments to be made in the CSS, on one class, to apply to 
-		// all objects containing the class of the object created here in my library, that
-		// is used to call the hover method.
-		hover: function (newClass) {
-			var elements = this.multiple (this.class);
-
-			// Elements is an array, loop over each index in array.
-			elements.map (function (index) {
-				index.addEvent ('mouseover', function () {index.addClass(newClass)});
-				index.addEvent ('mouseout', function () {index.removeClass(newClass)});
-				});
-			return this;
-		},
-
-
 		// Main function used for creating the elements in my SPA.
 		// Note: children is mainly just a placeholder. If we want nested elements,
 		// just call newElement as an argument to create child tags.
 		// For now we can only add one property/value, and one style. Will have to add
 		// funcitonality for an array being fed so we can handle large sets of code.
 		newElement: function (type,
-				properties = '', propVals = '',
-				styleProps = '', styleVals = '',
-				children = '') {
+				properties = [], propVals = [],
+				styleProps = [], styleVals = [],
+				children = []) {
 			// create element.
 			var parent = document.createElement (type);
 
@@ -196,12 +205,14 @@ of code I learn and pick up as I do more study, and hands-on education.
 				});
 			};
 
-			addProps (properties, propVals);
+			// If these things exist, add them to the element. Still trying to make this work.
+			if (properties [0]) {
+				addProps (properties, propVals);}
 
-			if (typeOf (styleProps) === 'Array') {
+			if (styleProps [0]) {
 				addStyles (styleProps, styleVals);}
 
-			if (typeOf (children) === 'Array') {
+			if (children [0]) {
 				addChildren (children);}
 
 			return parent;

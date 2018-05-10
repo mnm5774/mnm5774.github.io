@@ -3,10 +3,13 @@ var page3Templates = {
     var styles = {background: 'white', color: 'red'};
     var obj = MM ();
 
-    var test = obj.newElement ('div', ['class', 'id'], ['test-class', 'test-id'],
-      ['background-color', 'color'], [styles.background, styles.color],
-        [obj.newElement ('div', ['class'], ['child-class']),
-        obj.newElement ('div', ['class'], ['child-two'])]
+    var test = obj.newElement ('div',
+      ['class', 'id'], ['test-class', 'test-id'],
+      ['background-color', 'color'], [styles.background, styles.color], [
+        obj.newElement ('div', ['class'], ['child-class'], [], [], 'test text'),
+        obj.newElement ('div', ['class'], ['child-two'], [], [], 'test text'),
+        obj.newElement ('li', [], [], [], [], 'test element with no properties')
+        ]
       );
 
     var html = `
