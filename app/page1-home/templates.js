@@ -6,6 +6,8 @@ var page1Templates = {
       construct: function () {return MM ()}()
     };
 
+    console.log (obj.construct);
+
     var content = obj.construct.newElement (`div`,
       // [`class`, `id`], [`test-class`, `test-id`],
       [], [], [
