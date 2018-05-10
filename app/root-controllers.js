@@ -74,7 +74,6 @@ var controllers = {
 		var finalContent = resume;
 
 		utils.render ('body', finalContent);
-		console.log (resume);
 	},
 
 	footer: function (data, params) {

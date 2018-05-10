@@ -33,6 +33,10 @@ var page2Templates = {
         I've built below, as well as references to some of the sources of information
         I have used, which have become integral to my understanding of web
         technologies.</p>
+
+      <p>That being said, a lot of my code and comments made seem convoluted, and not
+        concise. This is because I am still a beginner, and I like to do things in a way
+        that I will understand, when I come back to it later to learn and build more.</p>
     `;
     return html;
   }

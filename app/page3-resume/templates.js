@@ -18,6 +18,7 @@ var page3Templates = {
       <header>Here's my resume page. More info soon to come.<header/>
     `;
 
+    console.log (test);
     return test + html;
   }
 };
