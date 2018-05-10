@@ -63,6 +63,20 @@
 </body>
 
 
+<!-- My library, a work in progress. These objects are hidden to the global object.
+	Note that this is separate from my SPA functionality. 
+	Have these after app is loaded so that when variables are declared to manipulate
+	DOM, they are according to the loaded page.
+	Update 5-10-18: Site structure is changing. I want a mehtod I can call to create
+	the DOM elements. I will use this library for that part of functionality. The flow
+	of data will continue to be structured according to my SPA, this library will provide
+	methods for creating and manipulating DOM elements as they are requested. -->
+<script src="src/Glass-1.js"></script>
+<!-- Used for general js. Currently adds functionality for the sticky navbar.
+	NOT the root of SPA/framework either. -->
+<script src="app.js"></script>
+
+
 
 <!-- here's my actual app. as things get bigger and export/import becomes available,
 	we may rethink inserting a script tag for every file needed. this works for now. -->
@@ -114,16 +128,6 @@
 <script src="app/utilities-1.js" 
 onload = "utils.router (); utils.router ('navbar'); utils.router ('footer');">
 </script>
-
-
-<!-- My library, a work in progress. These objects are hidden to the global object.
-	Note that this is separate from my SPA functionality. 
-	Have these after app is loaded so that when variables are declared to manipulate
-	DOM, they are according to the loaded page. -->
-<script src="src/Glass-1.js"></script>
-<!-- Used for general js. Currently adds functionality for the sticky navbar.
-	NOT the root of SPA/framework either. -->
-<script src="app.js"></script>
 
 
 </html>
