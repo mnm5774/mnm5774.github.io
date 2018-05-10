@@ -205,6 +205,7 @@ of code I learn and pick up as I do more study, and hands-on education.
 				});
 			};
 
+
 			// If these things exist, add them to the element. Still trying to make this work.
 			if (properties [0]) {
 				addProps (properties, propVals);}
@@ -215,6 +216,7 @@ of code I learn and pick up as I do more study, and hands-on education.
 			if (typeof (children) === 'Array') {
 				addChildren (children);}
 				else {parent.innerHTML = children};
+
 
 			return parent;
 			
