@@ -212,9 +212,9 @@ of code I learn and pick up as I do more study, and hands-on education.
 			if (styleProps [0]) {
 				addStyles (styleProps, styleVals);}
 
-			if (children [1]) {
+			if (typeof (children) === 'Array') {
 				addChildren (children);}
-				else {parent.appendChild (children)};
+				else {parent.innerHTML = children};
 
 			return parent;
 			
