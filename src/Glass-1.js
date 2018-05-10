@@ -179,6 +179,7 @@ of code I learn and pick up as I do more study, and hands-on education.
 			// trying this to cut down on code.
 			var properties = this.properties;
 			var propVals = this.propVals;
+			console.log (this.properties);
 
 			// create element.
 			var parent = document.createElement (type);
