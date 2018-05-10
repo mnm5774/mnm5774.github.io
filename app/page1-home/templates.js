@@ -3,13 +3,13 @@ var page1Templates = {
     var obj = {
       properties: [`class`, `id`],
       propVals: [`test-class`, `test-id`],
-      construct: function () {return MM ().newElement ()}
+      construct: function () {return MM ()}
     };
 
     var content = obj.construct.newElement (`div`,
       // [`class`, `id`], [`test-class`, `test-id`],
       [], [], [
-        obj.newElement ('div', [], [], 'test text'),
+        obj.construct.newElement ('div', [], [], 'test text'),
       ]
     );
 
