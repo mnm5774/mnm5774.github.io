@@ -3,16 +3,16 @@ var page1Templates = {
     var obj = {
       properties: [`class`, `id`],
       propVals: [`test-class`, `test-id`],
-      construct: function () {return MM ()}()
+      construct: function (tag) {return MM ().newElement (tag, [], [], 'construct works!')}
     };
 
     console.log (obj.construct);
 
-    var content = obj.construct.newElement (`div`,
+    var content = obj.construct (`div`,
       // [`class`, `id`], [`test-class`, `test-id`],
-      [], [], [
-        obj.construct.newElement ('div', [], [], 'test text'),
-      ]
+      // [], [], [
+        obj.construct ('div')
+      // ]
     );
 
     /*var html = document.createTextNode (`

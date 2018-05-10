@@ -176,7 +176,8 @@ of code I learn and pick up as I do more study, and hands-on education.
 				styleProps = [], styleVals = [],
 				children = []) {
 
-			// trying this to cut down on code.
+			// trying this to cut down on code. 'this' refers to the object that invokes
+			// the method.
 			var properties = this.properties;
 			var propVals = this.propVals;
 			console.log (this.properties);
