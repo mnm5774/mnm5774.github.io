@@ -1,6 +1,15 @@
 var page1Templates = {
   hero: function (data) {
-    var html = document.createTextNode (`
+    var styles = { background: 'white', color: 'red' };
+    var obj = MM();
+
+    var test = obj.newElement('header',
+      ['class', 'id'], ['test-class', 'test-id'],
+      ['background-color', 'color'], [styles.background, styles.color],
+      ``
+    );
+
+    /*var html = document.createTextNode (`
       <link rel="stylesheet" href="app/page1-home/styles-hero.css">
 
       <h1 class="hero-header">The Showcase</h1>
@@ -8,7 +17,7 @@ var page1Templates = {
         Welcome. Here is where I showcase my portfolio, play with code,
         and further my knowledge.
       </a>
-    `);
+    `);*/
     return html;
     },
 
