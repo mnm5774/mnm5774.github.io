@@ -1,17 +1,19 @@
 var page1Templates = {
   hero: function (data) {
-    var obj = {
+    var obj = MM ();
+    var element = {
       properties: [`class`, `id`],
       propVals: [`test-class`, `test-id`],
-      construct: function (tag) {return MM ().newElement (tag, [], [], 'construct works!')}
+      construct: function (tag) {return obj.newElement (tag, [], [], 'construct works!')}
     };
 
-    console.log (obj.construct);
+    console.log (element.construct);
+    console.log (obj.prototype);
 
-    var content = obj.construct (`div`,
+    var content = element.construct (`div`,
       // [`class`, `id`], [`test-class`, `test-id`],
       // [], [], [
-        obj.construct ('div')
+        element.construct ('div')
       // ]
     );
 
