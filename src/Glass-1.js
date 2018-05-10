@@ -201,7 +201,7 @@ of code I learn and pick up as I do more study, and hands-on education.
 			// add child HTML.
 			function addChildren (children) {
 				children.forEach (function (child) {
-					parent.appendChild (children);
+					parent.innerHTML = children;
 				});
 			};
 
