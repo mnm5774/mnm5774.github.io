@@ -172,9 +172,14 @@ of code I learn and pick up as I do more study, and hands-on education.
 		// For now we can only add one property/value, and one style. Will have to add
 		// funcitonality for an array being fed so we can handle large sets of code.
 		newElement: function (type,
-				properties = [], propVals = [],
+				// properties = [], propVals = [],
 				styleProps = [], styleVals = [],
 				children = []) {
+
+			// trying this to cut down on code.
+			var properties = this.properties;
+			var propVals = this.propVals;
+
 			// create element.
 			var parent = document.createElement (type);
 

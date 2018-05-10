@@ -1,11 +1,14 @@
 var page1Templates = {
   hero: function (data) {
-    var styles = { background: `white`, color: `red` };
-    var obj = MM ();
+    var obj = {
+      properties: [`class`, `id`],
+      propVals: [`test-class`, `test-id`],
+      construct: MM ()
+    },
 
-    var content = obj.newElement (`div`,
+    var content = obj.construct.newElement (`div`,
       [`class`, `id`], [`test-class`, `test-id`],
-      [`background-color`, `color`], [styles.background, styles.color], [
+      [], [], [
         obj.newElement ('div', ['class'], ['child-class'], [], [], 'test text'),
       ]
     );
