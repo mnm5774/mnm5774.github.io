@@ -71,6 +71,7 @@ var controllers = {
 		console.log (data);
 
 		var resume = page3Templates.resume ();
+		console.log (resume);
 		var finalContent = resume;
 
 		utils.render ('body', finalContent);
