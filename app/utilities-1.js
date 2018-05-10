@@ -102,6 +102,7 @@ var utils = (function () {
 
             if (!convert_markdown) {
                 document.getElementById (element_id).innerHTML = content;
+                console.log (content);
             }
             // not sure yet what convert_markdown is used for, but we pass it in the
             // controller. showdown is not defined as well?
