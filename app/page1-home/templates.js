@@ -1,12 +1,13 @@
 var page1Templates = {
   hero: function (data) {
-    var styles = { background: 'white', color: 'red' };
-    var obj = MM();
+    var styles = { background: `white`, color: `red` };
+    var obj = MM ();
 
-    var test = obj.newElement('header',
-      ['class', 'id'], ['test-class', 'test-id'],
-      ['background-color', 'color'], [styles.background, styles.color],
-      ``
+    var content = obj.newElement (`div`,
+      [`class`, `id`], [`test-class`, `test-id`],
+      [`background-color`, `color`], [styles.background, styles.color], [
+        obj.newElement ('div', ['class'], ['child-class'], [], [], 'test text'),
+      ]
     );
 
     /*var html = document.createTextNode (`
@@ -18,8 +19,8 @@ var page1Templates = {
         and further my knowledge.
       </a>
     `);*/
-    return html;
-    },
+    return content;
+  },
 
   home: function (data) {
     var content = document.createTextNode (`
