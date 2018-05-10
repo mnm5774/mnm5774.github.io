@@ -101,7 +101,7 @@ var utils = (function () {
            	console.log ('the container content is being inserted into : ' + element_id);
 
             if (!convert_markdown) {
-                document.getElementById (element_id).innerHTML = content;
+                document.getElementById (element_id).appendChild (content);
             }
             // not sure yet what convert_markdown is used for, but we pass it in the
             // controller. showdown is not defined as well?

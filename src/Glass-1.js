@@ -201,7 +201,7 @@ of code I learn and pick up as I do more study, and hands-on education.
 			// add child HTML.
 			function addChildren (children) {
 				children.forEach (function (child) {
-					parent.innerHTML = children;
+					parent.appendChild (child);
 				});
 			};
 
@@ -212,9 +212,9 @@ of code I learn and pick up as I do more study, and hands-on education.
 			if (styleProps [0]) {
 				addStyles (styleProps, styleVals);}
 
-			if (typeof (children) === 'Array') {
+			if (children [1]) {
 				addChildren (children);}
-				else {parent.innerHTML = children};
+				else {parent.appendChild (children)};
 
 			return parent;
 			
