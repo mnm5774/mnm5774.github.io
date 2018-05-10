@@ -4,7 +4,7 @@
 // a user on the page.
 var navbarTemplates = {
 	nav_desktop: function (data) {
-    var html = `
+    var html = document.createTextNode (`
       <link rel="stylesheet" href="app/root-components/navbar/styles.css">
         
       <div class="nav-links">
@@ -17,15 +17,15 @@ var navbarTemplates = {
         <a class="nav-page2" onclick="utils.router ('code');">Code</a>
         <a class="nav-page3" onclick="utils.router ('resume');">Resume</a>
       </div>
-    `;
+    `);
     return html;
   },
 
   nav_mobile: function (data) {
-    var html = `
+    var html = document.createTextNode (`
       <!-- mobile version of navbar, not done yet. -->
       <div class="nav-mobile" hidden></div>
-    `;
+    `);
     return html;
   } 
 };

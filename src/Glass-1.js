@@ -188,7 +188,7 @@ of code I learn and pick up as I do more study, and hands-on education.
 				});
 			};
 
-			// add styles.
+			// add styles. --not working right now...
 			function addStyles (styleProps, styleVals) {
 				styleProps.forEach (function (prop) {
 					var index = styleProps.indexOf (prop);
@@ -207,6 +207,8 @@ of code I learn and pick up as I do more study, and hands-on education.
 
 
 			// If these things exist, add them to the element. Still trying to make this work.
+			// Note: innerHTML does not insert DOM nodes, just strings. AppendChild is desirable
+			// if we have multiple children.
 			if (properties [0]) {
 				addProps (properties, propVals);}
 

@@ -1,6 +1,6 @@
 var page1Templates = {
   hero: function (data) {
-    var html = `
+    var html = document.createTextNode (`
       <link rel="stylesheet" href="app/page1-home/styles-hero.css">
 
       <h1 class="hero-header">The Showcase</h1>
@@ -8,12 +8,12 @@ var page1Templates = {
         Welcome. Here is where I showcase my portfolio, play with code,
         and further my knowledge.
       </a>
-    `;
+    `);
     return html;
     },
 
   home: function (data) {
-    var content = `
+    var content = document.createTextNode (`
       <link rel="stylesheet" href="app/page1-home/styles-content.css">
 
       <div id="hello_text">
@@ -124,7 +124,7 @@ var page1Templates = {
               odio, euismod id cursus sit amet, luctus eleifend sem.
             </p>
       </div>
-    `;
+    `);
     return content;
   }
 };
