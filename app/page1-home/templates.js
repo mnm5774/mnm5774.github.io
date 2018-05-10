@@ -4,12 +4,12 @@ var page1Templates = {
       properties: [`class`, `id`],
       propVals: [`test-class`, `test-id`],
       construct: MM ()
-    },
+    };
 
     var content = obj.construct.newElement (`div`,
-      [`class`, `id`], [`test-class`, `test-id`],
+      // [`class`, `id`], [`test-class`, `test-id`],
       [], [], [
-        obj.newElement ('div', ['class'], ['child-class'], [], [], 'test text'),
+        obj.newElement ('div', [], [], 'test text'),
       ]
     );
 
