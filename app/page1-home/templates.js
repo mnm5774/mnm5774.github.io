@@ -1,4 +1,10 @@
 var page1Templates = {
+  // here's what I want:
+  hero: function () {
+  },
+
+
+  /*
   hero: function (data) {
     var object = {
       properties: [`class`, `id`],
@@ -33,8 +39,7 @@ var page1Templates = {
         and further my knowledge.
       </a>
     `);*/
-    return construct ();
-  },
+
 
   home: function (data) {
     var content = document.createTextNode (`
