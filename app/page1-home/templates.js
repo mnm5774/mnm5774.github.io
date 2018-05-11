@@ -15,6 +15,7 @@ var page1Templates = {
       var obj = MM ('ul', [...childNodes],
         [...attributes], [...attVals], [...styles], [...styVals]);
 
+      console.log (obj);
       return obj;
     }
 
