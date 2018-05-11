@@ -269,7 +269,7 @@ created 5-11.
 	and also allows for seamless interaction between the client, and external
 	resources.
 	*/
-	var Init = Glass.init = function (type, attributes, attVals, styles, styVals) {
+	var Init = Glass.init = function (type, childNodes, attributes, attVals, styles, styVals) {
 
 		/* 'this' refers to the new javascript object; created in conjunction with
 		my function, and calling it as a constructor using the new keyword. We anchor
@@ -287,6 +287,8 @@ created 5-11.
 		*/
 		that.type = type || 'div' ||
 			'add tag for element, in string format.',
+		that.childNodes = childNodes || [] ||
+			'add nodes in an array for appending to object.',
 
 		that.attributes = attributes || [] ||
 			'add all attributes in an array. order matches value array.',

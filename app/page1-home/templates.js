@@ -1,6 +1,22 @@
 var page1Templates = {
   // here's what I want:
   hero: function () {
+    // create arrays with the arguments passed.
+    var attributes = [];
+    var attVals = [];
+
+    var styles = [];
+    var styVals = [];
+
+    // invoke library with my parameters. arguments not needed.
+    function construct () {
+      var obj = MM ('ul', [MM ('li'), MM('li'), MM('li')],
+        [...attributes], [...attVals], [...styles], [...styVals]);
+        
+      return obj;
+    }
+
+    return construct ();
   },
 
 
