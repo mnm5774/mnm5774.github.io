@@ -16,7 +16,7 @@ var page1Templates = {
         [...attributes], [...attVals], [...styles], [...styVals]);
 
       console.log (obj);
-      return obj;
+      return obj.newElement ();
     }
 
     return construct ();
