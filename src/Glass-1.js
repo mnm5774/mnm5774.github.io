@@ -22,49 +22,48 @@ another object-oriented language.
 
 Another note: a second purpose for this library will be for a central place of storage
 of code I learn and pick up as I do more study, and hands-on education.
+
+5-11-18: Also, the original structure of this library was inspired by jQuery. This
+will change somewhat, as I integrate these methods for use in my SPA.
+
+Note: 5-11-18: From here on, the new comments and structure reflects version 1.10,
+created 5-11.
 */
 
-//My function expression which allows for invocation, but not exposure to collison.
+// My function expression which allows for invocation, but not exposure to collison.
 (function (global) {
 	"use strict";
 
+		/* 5-10-18: Similar to how React has a create-element function, this library now
+		has a newElement function. I think the main purpose for this library will be to create
+		the elements that will be used by my template JS (in the SPA functionality), prior
+		to the dynamic inserting and rendering of the content. This helps minimize the amount
+		of code written, and helps me focus on writing and understanding Javascript better,
+		instead of spending time writing markup. It also allows for easy invocation of
+		the library, for a new element, for writing code that is responsive to client
+		interaction.
 
-	//The main function that will be invoked upon calling the library, which will create
-	//a new Glass.init-type object. The point of the arguments is to have properties we
-	//can use to get the element from the DOM.
+		Another note: by having everything centralized on JS (a programming language, as
+		opposed to a markup language), this allows for ease of integration with external sources,
+		such as databases, or APIs. Also provides seamless access to external sources. For
+		instance: if we have a list of items or data that is retreived externally upon client
+		request, and the connection is poor; the site doesn't attempt to refresh upon the request,
+		resulting in error, or missing elements. We could just have a default error message,
+		dynamically loading upon failure of the request, without dropping all of the content
+		already previously loaded. This allows the user to continue to browse site content,
+		and allows us to continue to request the desired content, without the client losing
+		the content. Also, hopefully, avoiding the dreaded loading spinner.
+		*/
 
-	/* 4-11-18: The above comment on using arguments will probably change, as I become
-	more focused on the intent and purpose for having this library.
-	*/
-
-	/* 5-10-18: Similar to how React has a create-element function, this library now
-	has a newElement function. I think the main purpose for this library will be to create
-	the elements that will be used by my template JS (in the SPA functionality), prior
-	to the dynamic inserting and rendering of the content. This helps minimize the amount
-	of code written, and helps me focus on writing and understanding Javascript better,
-	instead of spending time writing markup. It also allows for easy invocation of
-	the library, for a new element, for writing code that is responsive to client
-	interaction.
-
-	Another note: by having everything centralized on JS (a programming language, as
-	opposed to a markup language), this allows for ease of integration with external sources,
-	such as databases, or APIs. Also provides seamless access to external sources. For
-	instance: if we have a list of items or data that is retreived externally upon client
-	request, and the connection is poor; the site doesn't attempt to refresh upon the request,
-	resulting in error, or missing elements. We could just have a default error message,
-	dynamically loading upon failure of the request, without dropping all of the content
-	already previously loaded. This allows the user to continue to browse site content,
-	and allows us to continue to request the desired content, without the client losing
-	the content. Also, hopefully, avoiding the dreaded loading spinner.
-	*/
-
-	// 5-10-18: I need to change the arguments here, and some of the outer structure,
-	// as these kinds of things will be handled internally by the functions and objects.
-	var version = 1.00;
-	var Glass = function (selector, id, innerHTML, name, value, style) {
-			return new Glass.init (selector, id, innerHTML, name, value, style);
+		/* My initial function, invoked when the library is invoked. The arguments are passed
+		on to the constructor when creating a new object.
+		*/
+	var version = 1.10;
+	var Glass = function (type, attributes, attVals, styles, styVals) {
+		return new Glass.init (type, attributes, attVals, styles, styVals);
 		};
 
+/**************************
 
 
 	/* Note that all of the variables declared here are NOT available in all of the objects
@@ -261,46 +260,56 @@ of code I learn and pick up as I do more study, and hands-on education.
 
 	};
 
+/************************** */
 
+	/* My function constructor. These properties are applied to every object created
+	by using this function. The purpose of this object is to associate DOM objects,
+	with JS objects. By doing that, we can create, manipulate, and insert them on
+	the fly, upon any type of request. This cuts down on the initial code written,
+	and also allows for seamless interaction between the client, and external
+	resources.
+	*/
+	var Init = Glass.init = function (type, attributes, attVals, styles, styVals) {
 
-	// My function constructor. These properties are applied to every object created
-	// by using this function. The purpose of this object we are creating is to edit
-	// attributes of an html element. So here we are creating an object with the 
-	// attributes we want, and the values we want. Then, we will use the methods
-	// in the prototype to edit them. Maybe we can use the default variables and
-	// properties to have some default values to use and set to.
-	var Init = Glass.init = function (selector, id, innerHTML, name, value, style) {
-
-		// Anchor this keyword so we don't lose the original object.
-		console.clear ();
-		console.log (this);
+		/* 'this' refers to the new javascript object; created in conjunction with
+		my function, and calling it as a constructor using the new keyword. We anchor
+		'this' here, to 'that', in order to associate it with a variable, so as not
+		to lose 'this' somewhere along the execution stack.
+		*/
 		var that = this;
 
-		that.class = selector || 'input class',
-		that.id = id || 'input id',
-		that.innerHTML = innerHTML || 'input text',
-		that.name = name || 'input name',
-		that.value = value || 'input value',
-		that.style = style || 'input path to style',
+		/* Here we take the arguments given and write them to the object. Otherwise,
+		we have default values for these options, so that we can simply call the
+		library to get a new HTML object.
 
-		// Container for writing actual DOM element, for ease of access.
-		that.element = '';
-		// Go ahead and write element, so we don't have to call this later.
-		// Taking this out, so we can create an object, then use it to create
-		// an element.
-		// that.getElement ();
+		In terms of web applications, I think if I had multiple sites, we would have
+		different default values setup here.
+		*/
+		that.type = type || 'div' ||
+			'add tag for element, in string format.',
 
-		return this;
+		that.attributes = attributes || [] ||
+			'add all attributes in an array. order matches value array.',
+		that.attVals = attVals || [] ||
+			'add values for attributes in an array. order matches attributes array.',
+
+		that.styles = styles || [] ||
+			'add styles in an array. order matches style values array.',
+		that.styVals = styVals || [] ||
+			'style values in an array. order matches styles array.',
+
+		that.element = 'call this for element once it is in DOM.';
+
+		return that;
 	};
 
-	// This sets the prototype to the same as Glass. Makes for clean code,
-	// and you don't have to use the new keyword in order to get a new
-	// object back.
+	/* This sets the prototype to the same as Glass. Makes for clean code,
+	and you don't have to use the new keyword in order to get a new
+	object back.
+	*/
 	Glass.init.prototype = Glass.prototype;
 
 	// This sets aliases for calling Glass. Allows for easy access externally.
 	global.Glass = global.MM = Glass;
 
-// I'm wondering if we could add arguments to be passed immediately here,
-// to perform actions on page load.
 }(window));
