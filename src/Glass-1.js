@@ -244,6 +244,8 @@ of code I learn and pick up as I do more study, and hands-on education.
 	var Init = Glass.init = function (selector, id, innerHTML, name, value, style) {
 
 		// Anchor this keyword so we don't lose the original object.
+		console.clear ();
+		console.log (this);
 		var that = this;
 
 		that.class = selector || 'input class',
