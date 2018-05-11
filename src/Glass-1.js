@@ -116,18 +116,6 @@ of code I learn and pick up as I do more study, and hands-on education.
 	// memory. These objects are exposed through the prototype.
 	Glass.prototype = {
 
-		var properties = {
-		};
-
-		var propVals = {
-		};
-
-		var styleProps = {
-		};
-
-		var styleVals = {
-		};
-
 		// These methods will return the actual element in the DOM. Then we can edit them
 		// from there. These methods write the actual element to this.element. Once one
 		// of these is used, all we need to get the present DOM element is use this.element.
