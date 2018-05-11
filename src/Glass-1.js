@@ -217,11 +217,14 @@ created 5-11.
 			styles.forEach (function (sty) {
 				var index = sty.indexOf (styles);
 				var val = styVals [index];
-				element.style[sty] = val;
+				element.style [sty] = val;
 			});
 
 
 			this.element = element;
+			console.clear ();
+			console.log (this.element);
+			console.log (element);
 			return element;
 		}
 	};
