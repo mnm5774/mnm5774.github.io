@@ -180,7 +180,7 @@ of code I learn and pick up as I do more study, and hands-on education.
 			// the method.
 			var properties = this.properties;
 			var propVals = this.propVals;
-			console.log (this.properties);
+			console.log (this);
 
 			// create element.
 			var parent = document.createElement (type);
