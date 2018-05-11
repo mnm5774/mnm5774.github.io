@@ -10,12 +10,19 @@ var page1Templates = {
 
     var styles = {};
 
-    var content = object.construct (`div`,
-      // [`class`, `id`], [`test-class`, `test-id`],
-      // [], [], [
-        object.construct ('div')
-      // ]
-    );
+    function construct (tag) {
+      console.log (this);
+
+      var properties = {
+        properties: [`class`, `id`],
+        propVals: [`test-class`, `test-id`],
+        styleProps: [],
+        styleVals: []
+      };
+
+      return MM ().newElement (tag);
+    }
+ 
 
     /*var html = document.createTextNode (`
       <link rel="stylesheet" href="app/page1-home/styles-hero.css">
@@ -26,7 +33,7 @@ var page1Templates = {
         and further my knowledge.
       </a>
     `);*/
-    return content;
+    return construct ();
   },
 
   home: function (data) {
