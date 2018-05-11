@@ -81,12 +81,32 @@ of code I learn and pick up as I do more study, and hands-on education.
 	Also, I'm still not real clear on my purpose for having this entire library.
 	*/
 
-	// 5-10-18: As we call the newElement function, I think we should have default styles
-	// here for new elements. As arguments are provided for new and different styles, these
-	// should be overwritten with the desired styles, and properties for the elements.
-	var navbarStyles = {
-		backgroundColor: "blue",
-		color: "red"
+	/* 5-10-18: As we call the newElement function, I think we should have default styles
+	here for new elements. As arguments are provided for new and different styles, these
+	should be overwritten with the desired styles, and properties for the elements.
+	*/
+
+	/* Update 5-11: I want to cut down on the code I have to write in order to call
+	newElement. I want to simply be able to invoke the function with a tag-type,
+	and have an element to insert. To do that, I need default properties for my
+	function to read. Since 'this' refers to the new object, I think that I will
+	have to include any extra style/properties in the initial invocation of the
+	library. To summarize: We call Glass (); this creates a new JS object, with the
+	custom properties fed to it through the arguments; it defaults with properties
+	and styles stored here, along with maybe a default div type; calling newElement
+	returns the DOM object to be inserted, complete with the variables stored here
+	applied to the right attributes on the particular DOM element.
+	*/
+	var properties = {
+	};
+
+	var propVals = {
+	};
+
+	var styleProps = {
+	};
+
+	var styleVals = {
 	};
 
 
@@ -104,10 +124,18 @@ of code I learn and pick up as I do more study, and hands-on education.
 		the element is available to the object after it is inserted. These will change
 		once we change the arguments passed initially to the library.
 		*/
-		getElement: function () {
 
-			// Had to remove logic for determining whether we already had a class or not.
-			// If statement was not allowing to continue.
+		/* 5-11-18: Update: This function, and the things that rely on it are going to
+		change. My newElement function will return a created element. We should probably
+		have this setup to be able to query the DOM and get the object (in DOM), without
+		having to provide extra code, just by invoking, once newElement is called. I will
+		have to think about this, because maybe there is a way to insure I'm getting this
+		particular object when calling this function, eliminating the need for unique
+		IDs and classes. I will still use these of course, but having that ability
+		will be useful for handling and debugging large amounts of information, created
+		in-line by the SPA.
+		*/
+		getElement: function () {
 			if (this.class != 'input class') {return this.byClass ()}
 			else if (this.id != 'input id') {return this.byId ()}
 			else {throw 'no CSS selectors have been provided for this object'};
