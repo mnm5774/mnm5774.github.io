@@ -167,24 +167,12 @@ created 5-11.
 			return arr;
 		},
 
+/******************************* */
 
-
-		// Here are my chainable methods. They are reusable, and used by the more complex
-		// functions. The purpose of these more basic functions is to improve readability
-		// of the more complex code.
-		addClass: function (newClass) {
-			var element = this.element;
-			element.classList.add (newClass);
-			return this;
-		},
-
-		removeClass: function (className) {
-			var element = this.element;
-			element.classList.remove (className);
-			return this;
-		},
-
-
+		/*Here are my chainable methods. They are reusable, and used by the more complex
+		functions. The purpose of these more basic functions is to improve readability
+		of the more complex code.
+		*/
 		addEvent: function (event, func) {
 			var element = this.element;
 			element.addEventListener (event, func);
@@ -192,13 +180,55 @@ created 5-11.
 		},
 
 
+		/* My larger functions here are the main ones invoked by my SPA.
+		*/
+		newElement: function () {
+			var element = document.createElement (this.type);
+			var children = this.childNodes;
 
-		// Main function used for creating the elements in my SPA.
-		// Note: children is mainly just a placeholder. If we want nested elements,
-		// just call newElement as an argument to create child tags.
-		// For now we can only add one property/value, and one style. Will have to add
-		// funcitonality for an array being fed so we can handle large sets of code.
-		newElement: function (type,
+			var attributes = this.attributes;
+			var attVals = this.attVals;
+
+			var styles = this.styles;
+
+
+			if (typeof (children) === 'Array') {
+				children.forEach (function (child) {
+					element.appendChild (child);
+				});
+			} else {element.innerHTML = children};
+
+
+			attributes.forEach (function (att) {
+				var index = att.indexOf (attributes);
+				var val = attVals [index];
+				element.setAttribute (att, val);
+			});
+
+
+			/* The reason we need to separate the style properties from their values is so
+			that if that particular style exists on the element already, we will write over
+			the value, rather than creating a duplicate style with a different property.
+			*/
+			if (!element.style) {
+				element.setAttribute ('style', 'default: readytoinputstyle');
+			} else return;
+
+			styles.forEach (function (sty) {
+				var index = sty.indexOf (styles);
+				var val = styVals [index];
+				element.style.[sty] = val;
+			});
+
+
+			this.element = element;
+			return element;
+		}
+	};
+		
+/************************************ */
+		/*
+		(type,
 				// properties = [], propVals = [],
 				styleProps = [], styleVals = [],
 				children = []) {
@@ -296,7 +326,7 @@ created 5-11.
 			'add values for attributes in an array. order matches attributes array.',
 
 		that.styles = styles || [] ||
-			'add styles in an array. order matches style values array.',
+			'add style properties in an array. order matches style values array.',
 		that.styVals = styVals || [] ||
 			'style values in an array. order matches styles array.',
 
