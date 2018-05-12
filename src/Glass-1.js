@@ -194,7 +194,8 @@ created 5-11.
 
 			if (typeof (children) === 'Array') {
 				children.forEach (function (child) {
-					element.appendChild (child);
+					var c = document.createElement (child);
+					element.append (c);
 				});
 			} else {element.innerHTML = children};
 
@@ -212,7 +213,7 @@ created 5-11.
 			*/
 			if (!element.style) {
 				element.setAttribute ('style', 'default: readytoinputstyle');
-			} else return;
+			};
 
 			styles.forEach (function (sty) {
 				var index = sty.indexOf (styles);
@@ -228,72 +229,7 @@ created 5-11.
 			return element;
 		}
 	};
-		
-/************************************ */
-		/*
-		(type,
-				// properties = [], propVals = [],
-				styleProps = [], styleVals = [],
-				children = []) {
-
-			// trying this to cut down on code. 'this' refers to the object that invokes
-			// the method.
-			var properties = this.properties;
-			var propVals = this.propVals;
-			console.log (this);
-
-			// create element.
-			var parent = document.createElement (type);
-
-			// add properties.
-			function addProps (properties, propVals) {
-				properties.forEach (function (prop) {
-					var index = properties.indexOf (prop);
-					var value = propVals [index];
-
-					parent.setAttribute (prop, value);
-				});
-			};
-
-			// add styles. --not working right now...
-			function addStyles (styleProps, styleVals) {
-				styleProps.forEach (function (prop) {
-					var index = styleProps.indexOf (prop);
-					var value = styleVals [index];
-
-					parent.style.prop = value;
-				});
-			};
-
-			// add child HTML.
-			function addChildren (children) {
-				children.forEach (function (child) {
-					parent.appendChild (child);
-				});
-			};
-
-
-			// If these things exist, add them to the element. Still trying to make this work.
-			// Note: innerHTML does not insert DOM nodes, just strings. AppendChild is desirable
-			// if we have multiple children.
-			if (properties [0]) {
-				addProps (properties, propVals);}
-
-			if (styleProps [0]) {
-				addStyles (styleProps, styleVals);}
-
-			if (typeof (children) === 'Array') {
-				addChildren (children);}
-				else {parent.innerHTML = children};
-
-
-			return parent;
-			
-		}
-
-	};
-
-/************************** */
+/**************************************** */
 
 	/* My function constructor. These properties are applied to every object created
 	by using this function. The purpose of this object is to associate DOM objects,
