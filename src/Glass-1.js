@@ -190,6 +190,7 @@ created 5-11.
 			var attVals = this.attVals;
 
 			var styles = this.styles;
+			var styVals = this.styVals;
 
 
 			if (typeof (children) === 'Array') {
