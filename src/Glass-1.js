@@ -184,7 +184,7 @@ created 5-11.
 		*/
 		newElement: function () {
 			var element = document.createElement (this.type);
-			var children = this.childNodes;
+			var children = this.children;
 
 			var attributes = this.attributes;
 			var attVals = this.attVals;
@@ -194,7 +194,9 @@ created 5-11.
 
 			if (typeof (children) === 'Array') {
 				children.forEach (function (child) {
-					var c = document.createElement (child);
+					// var c = document.createElement (child);
+					// going to try to add invoking newElement.
+					var c = MM (child).newElement ();
 					element.append (c);
 				});
 			} else {element.innerHTML = children};
@@ -224,8 +226,8 @@ created 5-11.
 
 			this.element = element;
 			console.clear ();
+			console.log (this);
 			console.log (this.element);
-			console.log (element);
 			return element;
 		}
 	};
@@ -238,7 +240,7 @@ created 5-11.
 	and also allows for seamless interaction between the client, and external
 	resources.
 	*/
-	var Init = Glass.init = function (type, childNodes, attributes, attVals, styles, styVals) {
+	var Init = Glass.init = function (type, children, attributes, attVals, styles, styVals) {
 
 		/* 'this' refers to the new javascript object; created in conjunction with
 		my function, and calling it as a constructor using the new keyword. We anchor
@@ -256,7 +258,7 @@ created 5-11.
 		*/
 		that.type = type || 'div' ||
 			'add tag for element, in string format.',
-		that.childNodes = childNodes || [] ||
+		that.children = children || [] ||
 			'add nodes in an array for appending to object.',
 
 		that.attributes = attributes || [] ||
