@@ -226,7 +226,6 @@ created 5-11.
 
 
 			this.element = element;
-			console.clear ();
 			console.log (this);
 			console.log (this.element);
 			return element;
