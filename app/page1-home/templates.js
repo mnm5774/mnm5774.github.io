@@ -13,6 +13,7 @@ var page1Templates = {
     console.log (li);
 
     var hero = ul.append (li, li, li);
+    console.log (hero);
 
     return hero;
   },
