@@ -2,17 +2,17 @@ var page1Templates = {
   // here's what I want:
   hero: function () {
     var component =  MM ('ul', 
-      ['li', 'li', 'li', 'li'],
       ['class', 'id'],
       ['new-test-class', 'new-test-id'],
       ['background-color', 'color'],
       ['black', 'red']
-    ).newElement ();
+    );
     console.log (component);
 
-    var content = document.createTextNode ('heres some text');
+    var content = MM ('li', ['value'], ['heres some text']);
+    console.log (content);
 
-    return component;
+    return component.newElement ([content, content, content]);
   },
     // create arrays with the arguments passed.
     /*var childNodes = ['li', 'li', 'li'];

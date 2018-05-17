@@ -182,9 +182,8 @@ created 5-11.
 
 		/* My larger functions here are the main ones invoked by my SPA.
 		*/
-		newElement: function () {
+		newElement: function (children) {
 			var element = document.createElement (this.type);
-			var children = this.children;
 
 			var attributes = this.attributes;
 			var attVals = this.attVals;
@@ -193,14 +192,25 @@ created 5-11.
 			var styVals = this.styVals;
 
 
-			if (typeof (children) === 'Array') {
+			/*if (typeof (children) === 'Array') {
 				children.forEach (function (child) {
 					// var c = document.createElement (child);
 					// going to try to add invoking newElement.
 					var c = MM (child).newElement ();
 					element.append (c);
 				});
-			} else {element.innerHTML = children};
+			} else {element.innerHTML = children};*/
+
+			function addChild (children) {
+				children.forEach (function (child) {
+					var ce = child.element;
+					element.append (ce);
+				});
+			};
+
+			if (children) {
+				addChild (children);
+			};
 
 
 			attributes.forEach (function (att) {
@@ -240,7 +250,7 @@ created 5-11.
 	and also allows for seamless interaction between the client, and external
 	resources.
 	*/
-	var Init = Glass.init = function (type, children, attributes, attVals, styles, styVals) {
+	var Init = Glass.init = function (type, attributes, attVals, styles, styVals) {
 
 		/* 'this' refers to the new javascript object; created in conjunction with
 		my function, and calling it as a constructor using the new keyword. We anchor
@@ -258,8 +268,6 @@ created 5-11.
 		*/
 		that.type = type || 'div' ||
 			'add tag for element, in string format.',
-		that.children = children || [] ||
-			'add nodes in an array for appending to object.',
 
 		that.attributes = attributes || [] ||
 			'add all attributes in an array. order matches value array.',
@@ -271,7 +279,7 @@ created 5-11.
 		that.styVals = styVals || [] ||
 			'style values in an array. order matches styles array.',
 
-		that.element = 'call this for element once it is in DOM.';
+		that.element = this.newElement ();
 
 		return that;
 	};
