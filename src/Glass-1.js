@@ -208,7 +208,7 @@ created 5-11.
 				});
 			};
 
-			if (children) {
+			/*if (children) {
 				addChild (children);
 			};
 
