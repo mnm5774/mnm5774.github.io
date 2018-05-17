@@ -213,6 +213,8 @@ created 5-11.
 			};
 
 
+			/* Add attributes, 1-1.
+			*/
 			attributes.forEach (function (att) {
 				var index = att.indexOf (attributes);
 				var val = attVals [index];
@@ -235,9 +237,6 @@ created 5-11.
 			});
 
 
-			this.element = element;
-			console.log (this);
-			console.log (this.element);
 			return element;
 		}
 	};
@@ -281,7 +280,7 @@ created 5-11.
 
 		that.element = this.newElement ();
 
-		return that;
+		return this.element;
 	};
 
 	/* This sets the prototype to the same as Glass. Makes for clean code,

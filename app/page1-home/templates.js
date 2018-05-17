@@ -1,18 +1,20 @@
 var page1Templates = {
   // here's what I want:
   hero: function () {
-    var component =  MM ('ul', 
+    var ul =  MM ('ul', 
       ['class', 'id'],
-      ['new-test-class', 'new-test-id'],
+      ['hero', 'hero-parent'],
       ['background-color', 'color'],
       ['black', 'red']
     );
-    console.log (component);
+    console.log (ul);
 
-    var content = MM ('li', ['value'], ['heres some text']);
-    console.log (content);
+    var li = MM ('li');
+    console.log (li);
 
-    return component.newElement ([content, content, content]);
+    var hero = ul.append (li, li, li);
+
+    return hero;
   },
     // create arrays with the arguments passed.
     /*var childNodes = ['li', 'li', 'li'];
