@@ -8,6 +8,9 @@ var page1Templates = {
       ['background-color', 'color'],
       ['black', 'red']
     ).newElement ();
+    console.log (component);
+
+    var content = document.createTextNode ('heres some text');
 
     return component;
   },
