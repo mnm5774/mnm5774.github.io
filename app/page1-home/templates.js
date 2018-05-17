@@ -12,10 +12,10 @@ var page1Templates = {
     var li = MM ('li');
     console.log (li);
 
-    var hero = ul.append (li, li, li);
-    console.log (hero);
+    ul.append (li, li, li);
+    console.log (ul);
 
-    return hero;
+    return ul;
   },
     // create arrays with the arguments passed.
     /*var childNodes = ['li', 'li', 'li'];
