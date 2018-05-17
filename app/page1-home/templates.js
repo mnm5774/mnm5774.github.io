@@ -14,7 +14,7 @@ var page1Templates = {
 
     ul.append (li, li, li);
     console.log (ul);
-
+    //this works. Will have to come back to multiple elements.
     return ul;
   },
     // create arrays with the arguments passed.
