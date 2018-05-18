@@ -182,7 +182,7 @@ created 5-11.
 
 		/* My larger functions here are the main ones invoked by my SPA.
 		*/
-		newElement: function (children) {
+		newElement: function () {
 			var element = document.createElement (this.type);
 
 			var attributes = this.attributes;
@@ -201,13 +201,14 @@ created 5-11.
 				});
 			} else {element.innerHTML = children};*/
 
-			function addChild (children) {
+			// up to date.
+			/*function addChild (children) {
 				children.forEach (function (child) {
 					var ce = child.element;
 					element.append (ce);
 					console.log (child, children);
 				});
-			};
+			};*/
 
 			/*if (children) {
 				addChild (children);
