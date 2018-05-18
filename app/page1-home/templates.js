@@ -1,6 +1,7 @@
 var page1Templates = {
   // here's what I want:
   hero: function () {
+    // Creating a new object returns that element.
     var ul =  MM ('ul', 
       ['class', 'id'],
       ['hero', 'hero-parent'],
