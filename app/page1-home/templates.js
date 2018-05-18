@@ -1,10 +1,13 @@
 var page1Templates = {
   // here's what I want:
   hero: function () {
-    // Creating a new object returns that element.
-    var ul =  MM ('ul', 
+    // Creating a new object returns that element. This will be the parent.
+    var ul =  MM ('ul',
+      // Classes applied 1-1.
       ['class', 'id'],
       ['hero', 'hero-parent'],
+
+      // Styles applied 1-1.
       ['background-color', 'color'],
       ['black', 'red']
     );
@@ -13,7 +16,7 @@ var page1Templates = {
     var li = MM ('li');
     console.log (li);
 
-    ul.append (li, li, li);
+    //ul.append (li, li, li);
     console.log (ul);
     //this works. Will have to come back to multiple elements.
     return ul;
