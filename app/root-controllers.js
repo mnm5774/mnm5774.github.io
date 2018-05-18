@@ -1,5 +1,10 @@
 // Thirdly, a controller is invoked, which grabs the template,
 // and content, and invokes render. Render actually inserts the content.
+
+/* I need to create a flag variable in the render method for either append or innerhtml.
+This will determine if the content will be replaced, or added. This is a good example
+of why the utilities and components are broken up so much. We can have options.
+*/
 var controllers = {
 	navbar: function (data, params) {
 		//console.log (data);
