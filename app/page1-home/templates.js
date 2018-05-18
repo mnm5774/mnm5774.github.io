@@ -1,8 +1,23 @@
 var page1Templates = {
   // here's what I want:
   hero: function () {
+    
+    // Here's an example of how we would use variables to simplify changing aspects of a webpage.
+    var attributes = {
+      type: 'div',
+      class: 'hero',
+      header: {
+        type: 'h1',
+        class: 'hero-header',
+        text: 'The Showcase'},
+      intro: {
+        type: 'a',
+        class: 'hero-text',
+        text: 'Welcome. Here is where I showcase my portfolio, play with code and further my
+          knowledge.'}
+        
     // Creating a new object returns that element. This will be the parent.
-    var ul =  MM ('ul',
+    var hero =  MM ('ul',
       // Classes applied 1-1.
       ['class', 'id'],
       ['hero', 'hero-parent'],
@@ -10,69 +25,14 @@ var page1Templates = {
       // Styles applied 1-1.
       ['background-color', 'color'],
       ['black', 'red']
-    ).append (MM ('li').append ('div'), MM ('li'), MM ('li'));// wondering if this will work.
-    console.log (ul);
+        
+      //the below does not work. will have to figure out how to append.
+    ).append (MM ('li').append ('div'), MM ('li'), MM ('li'));
+    console.log (hero);
 
-    //this works. Will have to come back to multiple elements.
     return ul;
   },
-    // create arrays with the arguments passed.
-    /*var childNodes = ['li', 'li', 'li'];
 
-    var attributes = [];
-    var attVals = [];
-
-    var styles = [];
-    var styVals = [];
-
-    // invoke library with my parameters. arguments not needed.
-    function construct () {
-      var obj = MM ('ul', [...childNodes],
-        [...attributes], [...attVals], [...styles], [...styVals]);
-
-      console.log (obj);
-      return obj.newElement ();
-    }
-
-    return construct ();
-  },
-
-
-  /*
-  hero: function (data) {
-    var object = {
-      properties: [`class`, `id`],
-      propVals: [`test-class`, `test-id`],
-      styleProps: [],
-      styleVals: [],
-      construct: (tag) => {MM ().newElement (tag)}
-    };
-
-    var styles = {};
-
-    function construct (tag) {
-      console.log (this);
-
-      var properties = {
-        properties: [`class`, `id`],
-        propVals: [`test-class`, `test-id`],
-        styleProps: [],
-        styleVals: []
-      };
-
-      return MM ().newElement (tag);
-    }
- 
-
-    /*var html = document.createTextNode (`
-      <link rel="stylesheet" href="app/page1-home/styles-hero.css">
-
-      <h1 class="hero-header">The Showcase</h1>
-      <a class="hero-text">
-        Welcome. Here is where I showcase my portfolio, play with code,
-        and further my knowledge.
-      </a>
-    `);*/
 
 
   home: function (data) {
