@@ -1,22 +1,25 @@
 var page1Templates = {
   // here's what I want:
   hero: function () {
-    
     // Here's an example of how we would use variables to simplify changing aspects of a webpage.
+    
+    /* So here we have an object, which is fed as the argument to create a new MM object. MM
+    handles the functionality needed to support the object, and changes in these parameters.
+    */
     var parent = {
       type: 'div',
-      att: ['class'],
+      attributes: ['class'],
       attVals: ['hero']};
     
     var header = {
       type: 'h1',
-      att: ['class'],
+      attributes: ['class'],
       attVals: ['hero-header'],
       text: 'The Showcase'};
     
     var intro = {
       type: 'a',
-      att: ['class'],
+      attributes: ['class'],
       attVals: ['hero-text'],
       text: `Welcome. Here is where I showcase my portfolio, play with code and further my
         knowledge.`};
