@@ -46,7 +46,6 @@ in the console for reference in where the error occurred in the flow of things.
 
 var utils = (function () {
   var extract_params = function (params_string) {
-    console.log ('pre-parameters  ' + params_string);
 
     var params = {};
     var raw_params = params_string.split ('&');
@@ -76,7 +75,6 @@ var utils = (function () {
         router: function (route, data) {
         	// this sets the default route, when no route is passed.
             route = route || location.hash.slice(1) || 'home';
-            console.log ('router invoked  ' + route + ' ' + data);
 
             // cookies?
             var temp = route.split ('?');
@@ -98,7 +96,7 @@ var utils = (function () {
 
         render: function (element_id, content, convert_markdown) {
             convert_markdown = convert_markdown || false;
-           	console.log ('the container content is being inserted into : ' + element_id);
+           	//console.log ('the container content is being inserted into : ' + element_id);
 
             if (!convert_markdown) {
                 document.getElementById (element_id).append (content);
@@ -121,7 +119,7 @@ var utils = (function () {
         	var controller_to_invoke = controller_to_invoke || 'home';
             api_stub = api_stub || '';
             callback_params = callback_params || {};
-            console.log ('successfully invoked request api_stub:  ' + api_stub);
+            //console.log ('successfully invoked request api_stub:  ' + api_stub);
 
             //i'm wondering if this is for a loading spinner.
             //controllers.show_loader('page-content');

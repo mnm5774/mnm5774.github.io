@@ -205,6 +205,7 @@ created 5-11.
 				children.forEach (function (child) {
 					var ce = child.element;
 					element.append (ce);
+					console.log (child, children);
 				});
 			};
 
