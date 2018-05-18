@@ -29,25 +29,9 @@ var page1Templates = {
     var he = MM (header);
     var ie = MM (intro);
     
-    pe.append (he, ie);
+    pe.append (he, ie, he);
     console.log (pe);
     return pe;
-    
-    /*
-    var hero =  MM ('ul',
-      // Classes applied 1-1.
-      ['class', 'id'],
-      ['hero', 'hero-parent'],
-
-      // Styles applied 1-1.
-      ['background-color', 'color'],
-      ['black', 'red']
-        
-      //the below does not work. will have to figure out how to append.
-    ).append (MM ('li').append ('div'), MM ('li'), MM ('li'));
-    console.log (hero);
-
-    return ul;*/
   },
 
 
