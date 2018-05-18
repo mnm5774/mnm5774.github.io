@@ -66,7 +66,7 @@ var utils = (function () {
       }
     };
 
-    console.log ('post-parameters:  ' + params);
+    //console.log ('post-parameters:  ' + params);
     return params;
   };
 
@@ -88,7 +88,7 @@ var utils = (function () {
             // console.log (function_to_invoke); output: 'home'
             // fire away... /invoke the view with any data that was passed to the
             // router, along with extra parameters if present.
-            console.log (function_to_invoke)
+            //console.log (function_to_invoke)
             if (function_to_invoke) {
                 views [function_to_invoke] (function_to_invoke, data, params);
             }
