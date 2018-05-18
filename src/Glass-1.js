@@ -63,7 +63,7 @@ created 5-11.
 		return new Glass.init (type, attributes, attVals, styles, styVals);
 		};
 
-/**************************
+/********************************************************************************************************************/
 
 
 	/* Note that all of the variables declared here are NOT available in all of the objects
@@ -167,7 +167,7 @@ created 5-11.
 			return arr;
 		},
 
-/******************************* */
+/*******************************************************************************************************************/
 
 		/*Here are my chainable methods. They are reusable, and used by the more complex
 		functions. The purpose of these more basic functions is to improve readability
@@ -180,6 +180,7 @@ created 5-11.
 		},
 
 
+		
 		/* My larger functions here are the main ones invoked by my SPA.
 		*/
 		newElement: function () {
@@ -242,7 +243,7 @@ created 5-11.
 			return element;
 		}
 	};
-/**************************************** */
+	
 
 	/* My function constructor. These properties are applied to every object created
 	by using this function. The purpose of this object is to associate DOM objects,
