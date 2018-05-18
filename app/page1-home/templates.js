@@ -24,7 +24,15 @@ var page1Templates = {
       text: `Welcome. Here is where I showcase my portfolio, play with code and further my
         knowledge.`};
         
-    // Creating a new object returns that element. This will be the parent.
+    // Creating a new object returns that element. This will be the parent element.
+    var pe = MM (parent);
+    var he = MM (header);
+    var ie = MM (intro);
+    
+    pe.append (he, ie);
+    return pe;
+    
+    /*
     var hero =  MM ('ul',
       // Classes applied 1-1.
       ['class', 'id'],
@@ -38,7 +46,7 @@ var page1Templates = {
     ).append (MM ('li').append ('div'), MM ('li'), MM ('li'));
     console.log (hero);
 
-    return ul;
+    return ul;*/
   },
 
 
