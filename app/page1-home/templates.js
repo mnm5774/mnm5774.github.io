@@ -10,14 +10,9 @@ var page1Templates = {
       // Styles applied 1-1.
       ['background-color', 'color'],
       ['black', 'red']
-    );
+    ).append (MM ('li').append ('div'), MM ('li'), MM ('li'));// wondering if this will work.
     console.log (ul);
 
-    var li = MM ('li');
-    console.log (li);
-
-    //ul.append (li, li, li);
-    console.log (ul);
     //this works. Will have to come back to multiple elements.
     return ul;
   },
