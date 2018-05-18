@@ -2,18 +2,18 @@
 // and content, and invokes render. Render actually inserts the content.
 var controllers = {
 	navbar: function (data, params) {
-		console.log (data);
+		//console.log (data);
 
 		var desktop = navbarTemplates.nav_desktop ();
 		var mobile = navbarTemplates.nav_mobile ();
 		var finalContent = desktop + mobile;
 
-		console.log ('navbar is grabbed, and ready to invoke render!');
+		//console.log ('navbar is grabbed, and ready to invoke render!');
 		utils.render ('navbar', finalContent);
 	},
 
 	home: function (data, params) {
-		console.log (data);
+		//console.log (data);
 
 		// this looks like more of inserting the external data requested into our page.
 		// this will probably be useful later when dealing with a db or external API.
@@ -41,7 +41,7 @@ var controllers = {
 	  // content variable, with multiple objects inserted.
 	  // var page1_home = fullPage;  + recent_posts;
 
-	  console.log ('content is grabbed, and ready to invoke render!');
+	  //console.log ('content is grabbed, and ready to invoke render!');
 	  // Now actually render the html on the page. First argument is the id of the
 		// containing element where the template will be inserted. second argument is
 		// the content that will be inserted. This is where my naming convention for
@@ -54,12 +54,12 @@ var controllers = {
 		// heros for different pages later on.
 		var heroContent = page1Templates.hero ();
 
-		console.log ('hero is grabbed, and ready to invoke render!');
+		//console.log ('hero is grabbed, and ready to invoke render!');
 		utils.render ('hero', heroContent);
 	},
 
 	code: function (data, params) {
-		console.log (data);
+		//console.log (data);
 
 		var js30 = page2Templates.js30 ();
 		var finalContent = js30;
@@ -68,22 +68,22 @@ var controllers = {
 	},
 
 	resume: function (data, params) {
-		console.log (data);
+		//console.log (data);
 
 		var resume = page3Templates.resume ();
-		console.log (resume);
+		//console.log (resume);
 		var finalContent = resume;
 
 		utils.render ('body', finalContent);
 	},
 
 	footer: function (data, params) {
-		console.log (data);
+		//console.log (data);
 
 		var footerContent = footerTemplates.footer ();
 		var finalContent = footerContent;
 
-		console.log ('footer is grabbed, and ready to invoke render!');
+		//console.log ('footer is grabbed, and ready to invoke render!');
 		utils.render ('footer', finalContent);
 	}
 };
