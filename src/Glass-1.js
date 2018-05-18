@@ -251,7 +251,7 @@ created 5-11.
 	and also allows for seamless interaction between the client, and external
 	resources.
 	*/
-	var Init = Glass.init = function (type, attributes, attVals, styles, styVals) {
+	var Init = Glass.init = function (obj) {
 
 		/* 'this' refers to the new javascript object; created in conjunction with
 		my function, and calling it as a constructor using the new keyword. We anchor
@@ -263,26 +263,27 @@ created 5-11.
 		/* Here we take the arguments given and write them to the object. Otherwise,
 		we have default values for these options, so that we can simply call the
 		library to get a new HTML object.
+		Note: arguments given are now optional, contained in the template object.
 
 		In terms of web applications, I think if I had multiple sites, we would have
 		different default values setup here.
 		*/
-		that.type = type || 'div' ||
+		that.type = obj.type || 'div' ||
 			'add tag for element, in string format.',
 
-		that.attributes = attributes || [] ||
+		that.attributes = obj.attributes || [] ||
 			'add all attributes in an array. order matches value array.',
-		that.attVals = attVals || [] ||
+		that.attVals = obj.attVals || [] ||
 			'add values for attributes in an array. order matches attributes array.',
 
-		that.styles = styles || [] ||
+		that.styles = obj.styles || [] ||
 			'add style properties in an array. order matches style values array.',
-		that.styVals = styVals || [] ||
+		that.styVals = obj.styVals || [] ||
 			'style values in an array. order matches styles array.',
 
-		that.element = this.newElement ();
+		that.element = obj.element || that.newElement ();
 
-		return this.element;
+		return that.element;
 	};
 
 	/* This sets the prototype to the same as Glass. Makes for clean code,
