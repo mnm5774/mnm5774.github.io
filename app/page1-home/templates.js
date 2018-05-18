@@ -3,18 +3,23 @@ var page1Templates = {
   hero: function () {
     
     // Here's an example of how we would use variables to simplify changing aspects of a webpage.
-    var attributes = {
+    var parent = {
       type: 'div',
-      class: 'hero',
-      header: {
-        type: 'h1',
-        class: 'hero-header',
-        text: 'The Showcase'},
-      intro: {
-        type: 'a',
-        class: 'hero-text',
-        text: 'Welcome. Here is where I showcase my portfolio, play with code and further my
-          knowledge.'}
+      att: ['class'],
+      attVals: ['hero']};
+    
+    var header = {
+      type: 'h1',
+      att: ['class'],
+      attVals: ['hero-header'],
+      text: 'The Showcase'};
+    
+    var intro = {
+      type: 'a',
+      att: ['class'],
+      attVals: ['hero-text'],
+      text: `Welcome. Here is where I showcase my portfolio, play with code and further my
+        knowledge.`};
         
     // Creating a new object returns that element. This will be the parent.
     var hero =  MM ('ul',
