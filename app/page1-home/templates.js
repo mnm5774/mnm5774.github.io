@@ -30,6 +30,7 @@ var page1Templates = {
     var ie = MM (intro);
     
     pe.append (he, ie);
+    console.log (pe);
     return pe;
     
     /*
