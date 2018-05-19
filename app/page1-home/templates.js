@@ -11,9 +11,9 @@ var page1Templates = {
       attributes: ['class'],
       attVals: ['hero'],
       styles: {
-        string: `
-         display: grid;
-         justify-content: center;
+        ['display']: 'grid',
+        string: {
+         `justify-content: center;
          background-image: url('/photos-highres/stars1.jpg');
          background-size: cover;
          min-height: 36vw;
