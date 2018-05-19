@@ -228,7 +228,7 @@ created 5-11.
 			/* The reason we need to separate the style properties from their values is so
 			that if that particular style exists on the element already, we will write over
 			the value, rather than creating a duplicate style with a different property.
-			*/
+			
 			if (!element.style) {
 				element.setAttribute ('style', 'default: readytoinputstyle');
 			};
@@ -237,7 +237,9 @@ created 5-11.
 				var index = sty.indexOf (styles);
 				var val = styVals [index];
 				element.style [sty] = val;
-			});
+			});*/
+			
+			element.setAttribute ('style', this.style.string);
 
 
 			return element;
