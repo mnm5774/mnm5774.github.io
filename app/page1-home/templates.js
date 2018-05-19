@@ -11,6 +11,7 @@ var page1Templates = {
       attributes: ['class'],
       attVals: ['hero'],
       styles: {
+        string: `
          display: grid;
          justify-content: center;
          background-image: url('/photos-highres/stars1.jpg');
@@ -21,7 +22,7 @@ var page1Templates = {
          border: 7px;
          border-color: darkgoldenrod;
          border-style: hidden hidden outset hidden;
-       }
+       `}
     };
     
     var header = {
