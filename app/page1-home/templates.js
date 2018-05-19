@@ -12,8 +12,8 @@ var page1Templates = {
       attVals: ['hero'],
       styles: {
         ['display']: 'grid',
-        string: {
-         `justify-content: center;
+        string: `
+         justify-content: center;
          background-image: url('/photos-highres/stars1.jpg');
          background-size: cover;
          min-height: 36vw;
