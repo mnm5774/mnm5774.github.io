@@ -59,8 +59,8 @@ created 5-11.
 		on to the constructor when creating a new object.
 		*/
 	var version = 1.10;
-	var Glass = function (type, attributes, attVals, styles, styVals) {
-		return new Glass.init (type, attributes, attVals, styles, styVals);
+	var Glass = function (obj) {
+		return new Glass.init (obj);
 		};
 
 /********************************************************************************************************************/
