@@ -44,7 +44,9 @@ var page1Templates = {
     var ie = MM (intro);
     
     // Append the elements, all inside the parent.
-    pe.append (he, ie, he);
+    he.append (header.text);
+    ie.append (intro.text);
+    pe.append (he, ie);
     console.log (pe);
     return pe;
   },
