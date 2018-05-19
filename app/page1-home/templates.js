@@ -9,7 +9,20 @@ var page1Templates = {
     var parent = {
       type: 'div',
       attributes: ['class'],
-      attVals: ['hero']};
+      attVals: ['hero'],
+      styles: {
+         display: grid;
+         justify-content: center;
+         background-image: url('/photos-highres/stars1.jpg');
+         background-size: cover;
+         min-height: 36vw;
+         background-repeat: no-repeat;
+         background-color: #222;
+         border: 7px;
+         border-color: darkgoldenrod;
+         border-style: hidden hidden outset hidden;
+       }
+    };
     
     var header = {
       type: 'h1',
