@@ -189,8 +189,8 @@ created 5-11.
 			var attributes = this.attributes;
 			var attVals = this.attVals;
 
-			var styles = this.styles;
-			var styVals = this.styVals;
+			//var styles = this.styles;
+			//var styVals = this.styVals;
 
 
 			/*if (typeof (children) === 'Array') {
@@ -239,7 +239,7 @@ created 5-11.
 				element.style [sty] = val;
 			});*/
 			
-			element.setAttribute ('style', this.style.string);
+			element.setAttribute ('style', this.styles.string);
 
 
 			return element;
