@@ -240,6 +240,9 @@ created 5-11.
 			});*/
 			
 			element.setAttribute ('style', this.styles.string);
+			for (var sty in this.styles) {
+				element.style [sty] = this.style.sty;
+			};
 
 
 			return element;
