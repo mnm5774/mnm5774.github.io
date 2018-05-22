@@ -242,7 +242,7 @@ created 5-11.
 			element.setAttribute ('style', '');
 			for (var sty in this.styles) {
 				console.log (sty);
-				console.log (this.styles.sty);
+				console.log (this);
 				element.style [sty] = this.styles.sty;
 			};
 
