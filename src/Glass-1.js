@@ -218,6 +218,8 @@ created 5-11.
 			setStyle (this);
 
 			this.element = element;
+				console.log (this);
+				console.log (this.element);
 			return element;
 		}
 	};
