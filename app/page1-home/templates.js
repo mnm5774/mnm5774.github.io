@@ -55,8 +55,8 @@ var page1Templates = {
     /**********************************************************************************************/
     var input = {
       type: 'input',
-      attributes: 'class',
-        attVals: 'test-input'};
+      attributes: ['class'],
+        attVals: ['test-input']};
     var button = {
       type: 'button',
         text: 'click here'};
@@ -71,8 +71,8 @@ var page1Templates = {
     function addText (text) {
       var obj = {
         type: 'div',
-        attributes: 'class',
-          attVals: 'unique entry',
+        attributes: ['class'],
+          attVals: ['unique entry'],
           text: testie.value};
       var newEl = MM (obj);
       pe.append (newEl);
