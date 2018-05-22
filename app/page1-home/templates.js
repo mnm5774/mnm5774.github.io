@@ -9,9 +9,11 @@ var page1Templates = {
     var parent = {
       type: 'div',
       attributes: ['class'],
-      attVals: ['hero'],
+        attVals: ['hero'],
       styles: {
         ['display']: 'grid',
+        
+        //just for test.
         string: `
          justify-content: center;
          background-image: url('/photos-highres/stars1.jpg');
@@ -28,17 +30,18 @@ var page1Templates = {
     var header = {
       type: 'h1',
       attributes: ['class'],
-      attVals: ['hero-header'],
-      text: 'The Showcase'};
+        attVals: ['hero-header'],
+        text: 'The Showcase'};
     
     var intro = {
       type: 'a',
       attributes: ['class'],
-      attVals: ['hero-text'],
-      text: `Welcome. Here is where I showcase my portfolio, play with code and further my
-        knowledge.`};
+        attVals: ['hero-text'],
+        text: `Welcome. Here is where I showcase my portfolio, play with code and further my
+          knowledge.`};
         
     // Creating a new object returns that element. This will be the parent element.
+    // need to figure out how to remove the below step.
     var pe = MM (parent);
     var he = MM (header);
     var ie = MM (intro);
@@ -48,7 +51,36 @@ var page1Templates = {
     ie.append (intro.text);
     pe.append (he, ie);
     console.log (pe);
+    
+    /**********************************************************************************************/
+    var input = {
+      type: 'input',
+      attributes: 'class',
+        attVals: 'test-input'};
+    var button = {
+      type: 'button',
+        text: 'click here'};
+    
+    var testie = MM (input);
+    var testbt = MM (button);
+    pe.append (testie, testbt);
+    console.log (pe);
+    
+    // Here I will build an example function of adding new elements on demand.
+    // this probably does not belong in the template.
+    function addText (text) {
+      var obj = {
+        type: 'div',
+        attributes: 'class',
+          attVals: 'unique entry',
+          text: testie.value};
+      var newEl = MM (obj);
+      pe.append (newEl);
+      console.log (pe);
+    }
+    
     return pe;
+      
   },
 
 
