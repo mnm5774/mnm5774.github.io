@@ -209,12 +209,12 @@ created 5-11.
 			//};
 			
 			//trying this.
-			function setStyle () {
-    				for (var property in this.styles) {
-       	 			element.style [property] = this.styles[property];}
+			function setStyle (object) {
+    				for (var property in object.styles) {
+       	 			element.style [property] = object.styles[property];}
 			};
 			
-			setStyle ();
+			setStyle (this);
 
 
 			return element;
