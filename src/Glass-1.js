@@ -206,7 +206,7 @@ created 5-11.
 					var index = a.indexOf (object.attributes);
 					var value = object.attVals [index];
 					element.setAttribute (a, value);
-				}
+				})
 			};
 							   
 			function setStyle (object) {
