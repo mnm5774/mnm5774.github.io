@@ -11,7 +11,8 @@ var page1Templates = {
       attributes: ['class'],
         attVals: ['hero'],
       styles: {
-        ['display']: 'grid',
+        display: 'grid',
+        backgroundImage: 'url ('/photos-highres/stars1.jpg'),
         
         //just for test.
         string: `
