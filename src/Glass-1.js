@@ -167,7 +167,6 @@ created 5-11.
 			return arr;
 		},
 
-/*******************************************************************************************************************/
 
 		/*Here are my chainable methods. They are reusable, and used by the more complex
 		functions. The purpose of these more basic functions is to improve readability
@@ -179,44 +178,46 @@ created 5-11.
 			return this;
 		},
 
-
+/*******************************************************************************************************************/
 		
 		/* My larger functions here are the main ones invoked by my SPA.
+		The below works. Next I need to figure out creating multiple elements easy,
+		and cutting down my code in the template.
 		*/
 		newElement: function () {
 			var element = document.createElement (this.type);
 
-			var attributes = this.attributes;
+			/*var attributes = this.attributes;
 			var attVals = this.attVals;
 
 			attributes.forEach (function (att) {
 				var index = att.indexOf (attributes);
 				var val = attVals [index];
 				element.setAttribute (att, val);
-			});
+			});*/
 
 
 			/* The reason we need to separate the style properties from their values is so
 			that if that particular style exists on the element already, we will write over
 			the value, rather than creating a duplicate style with a different property.
 			*/
-			//element.setAttribute ('style', '');
-			//for (var sty in this.styles) {
-				//console.log (sty);
-				//console.log (this.styles [sty]);
-				//element.style [sty] = this.styles.sty;
-				//console.log (element);
-			//};
-			
-			//trying this.
+			function setAttributes (object) {
+				object.attributes.forEach (function (a) {
+					var index = a.indexOf (object.attributes);
+					var value = object.attVals [index];
+					element.setAttribute (a, value);
+				}
+			};
+							   
 			function setStyle (object) {
     				for (var property in object.styles) {
        	 			element.style [property] = object.styles[property];}
 			};
 			
+			setAttributes (this);
 			setStyle (this);
 
-
+			this.element = element;
 			return element;
 		}
 	};
@@ -256,8 +257,8 @@ created 5-11.
 
 		that.styles = obj.styles || [] ||
 			'add style properties in an array. order matches style values array.',
-		that.styVals = obj.styVals || [] ||
-			'style values in an array. order matches styles array.',
+		/*that.styVals = obj.styVals || [] ||
+			'style values in an array. order matches styles array.',*/
 
 		that.element = obj.element || that.newElement ();
 
