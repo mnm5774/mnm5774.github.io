@@ -200,13 +200,21 @@ created 5-11.
 			that if that particular style exists on the element already, we will write over
 			the value, rather than creating a duplicate style with a different property.
 			*/
-			element.setAttribute ('style', '');
-			for (var sty in this.styles) {
-				console.log (sty);
-				console.log (this.styles [sty]);
-				element.style [sty] = this.styles.sty;
-				console.log (element);
+			//element.setAttribute ('style', '');
+			//for (var sty in this.styles) {
+				//console.log (sty);
+				//console.log (this.styles [sty]);
+				//element.style [sty] = this.styles.sty;
+				//console.log (element);
+			//};
+			
+			//trying this.
+			function setStyle () {
+    				for (var property in this.styles) {
+       	 			element.style [property] = this.styles[property];}
 			};
+			
+			setStyle ();
 
 
 			return element;
