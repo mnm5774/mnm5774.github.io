@@ -12,6 +12,7 @@ var page1Templates = {
         attVals: ['hero'],
       styles: {
         display: `grid`,
+        // not sure if this format works yet.
         backgroundImage: `url ('/photos-highres/stars1.jpg')`,
         
         //just for test.
@@ -74,11 +75,14 @@ var page1Templates = {
         type: 'div',
         attributes: ['class'],
           attVals: ['unique entry'],
-          text: testie.value};
+          text: text};
       var newEl = MM (obj);
+      newEl.append (obj.text);
       pe.append (newEl);
       console.log (pe);
     }
+    
+    testbt.addEventListener ('click', addText (testie.value);
     
     return pe;
       
