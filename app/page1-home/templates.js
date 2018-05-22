@@ -82,7 +82,7 @@ var page1Templates = {
       console.log (pe);
     }
     
-    testbt.addEventListener ('click', addText (testie.value);
+    testbt.addEventListener ('click', addText (testie.value));
     
     return pe;
       
