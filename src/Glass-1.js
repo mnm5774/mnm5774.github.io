@@ -189,35 +189,6 @@ created 5-11.
 			var attributes = this.attributes;
 			var attVals = this.attVals;
 
-			//var styles = this.styles;
-			//var styVals = this.styVals;
-
-
-			/*if (typeof (children) === 'Array') {
-				children.forEach (function (child) {
-					// var c = document.createElement (child);
-					// going to try to add invoking newElement.
-					var c = MM (child).newElement ();
-					element.append (c);
-				});
-			} else {element.innerHTML = children};*/
-
-			// up to date.
-			/*function addChild (children) {
-				children.forEach (function (child) {
-					var ce = child.element;
-					element.append (ce);
-					console.log (child, children);
-				});
-			};*/
-
-			/*if (children) {
-				addChild (children);
-			};
-
-
-			/* Add attributes, 1-1.
-			*/
 			attributes.forEach (function (att) {
 				var index = att.indexOf (attributes);
 				var val = attVals [index];
@@ -228,22 +199,13 @@ created 5-11.
 			/* The reason we need to separate the style properties from their values is so
 			that if that particular style exists on the element already, we will write over
 			the value, rather than creating a duplicate style with a different property.
-			
-			if (!element.style) {
-				element.setAttribute ('style', 'default: readytoinputstyle');
-			};
-
-			styles.forEach (function (sty) {
-				var index = sty.indexOf (styles);
-				var val = styVals [index];
-				element.style [sty] = val;
-			});*/
-			
+			*/
 			element.setAttribute ('style', '');
 			for (var sty in this.styles) {
 				console.log (sty);
 				console.log (this.styles [sty]);
 				element.style [sty] = this.styles.sty;
+				console.log (element);
 			};
 
 
