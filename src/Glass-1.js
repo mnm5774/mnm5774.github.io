@@ -239,9 +239,10 @@ created 5-11.
 				element.style [sty] = val;
 			});*/
 			
-			element.setAttribute ('style', this.styles.string);
+			element.setAttribute ('style');
 			for (var sty in this.styles) {
-				element.style [sty] = this.style.sty;
+				console.log (sty);
+				element.style [sty] = this.style [sty];
 			};
 
 
