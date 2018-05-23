@@ -12,6 +12,7 @@ var page1Templates = {
         attVals: ['hero'],
       styles: {
         display: `grid`,
+        border: `7px`,
         // not sure if this format works yet.
         backgroundImage: `url ('/photos-highres/stars1.jpg')`,
         
