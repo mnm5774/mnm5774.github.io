@@ -68,7 +68,7 @@ var page1Templates = {
     pe.append (testin, testbt);
     
     // Here I will build an example function of adding new elements on demand.
-    // this probably does not belong in the template.
+    // this probably does not belong in the template, but it is working.
     function addText () {
       var obj = {
         type: 'div',
