@@ -65,7 +65,7 @@ var page1Templates = {
     
     var testin = MM (input);
     var testbt = MM (button);
-    pe.append (testie, testbt);
+    pe.append (testin, testbt);
     
     // Here I will build an example function of adding new elements on demand.
     // this probably does not belong in the template.
