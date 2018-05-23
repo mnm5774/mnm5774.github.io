@@ -69,19 +69,19 @@ var page1Templates = {
     
     // Here I will build an example function of adding new elements on demand.
     // this probably does not belong in the template.
-    function addText (text) {
+    function addText () {
       var obj = {
         type: 'div',
         attributes: ['class'],
           attVals: ['unique entry'],
-          text: text};
+          text: testin.value};
       var newEl = MM (obj);
       newEl.append (obj.text);
       pe.append (newEl);
       console.log (pe);
     }
     
-    testbt.addEventListener ('click', addText (testin.value));
+    testbt.addEventListener ('click', addText);
     
     return pe;
       
