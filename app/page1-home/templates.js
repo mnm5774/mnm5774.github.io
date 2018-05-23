@@ -53,7 +53,6 @@ var page1Templates = {
     he.append (header.text);
     ie.append (intro.text);
     pe.append (he, ie);
-    console.log (pe);
     
     /**********************************************************************************************/
     var input = {
@@ -64,10 +63,9 @@ var page1Templates = {
       type: 'button',
         text: 'click here'};
     
-    var testie = MM (input);
+    var testin = MM (input);
     var testbt = MM (button);
     pe.append (testie, testbt);
-    console.log (pe);
     
     // Here I will build an example function of adding new elements on demand.
     // this probably does not belong in the template.
@@ -83,7 +81,7 @@ var page1Templates = {
       console.log (pe);
     }
     
-    testbt.addEventListener ('click', addText (testie.value));
+    testbt.addEventListener ('click', addText (testin.value));
     
     return pe;
       
