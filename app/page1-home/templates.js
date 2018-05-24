@@ -17,16 +17,16 @@ var page1Templates = {
     handles the functionality needed to support the object, and changes in these parameters.
     */
     var parent = {
-      type: 'div',
-      attributes: ['class', 'id'],
+      type: `div`,
+      attributes: {class: `heroclass`, id: `heroid`},
         attVals: ['heroclass', 'heroid'],
       styles: {
         display: `grid`,
         border: `7px`,
         // this multiple words format does not work yet.
-        backgroundImage: `url ('/photos-highres/stars1.jpg')`,
+        backgroundImage: `url ('/photos-highres/stars1.jpg')`
         
-        //just for test.
+        /*just for test.
         string: `
          justify-content: center;
          background-image: url('/photos-highres/stars1.jpg');
@@ -36,7 +36,7 @@ var page1Templates = {
          background-color: #222;
          border-color: darkgoldenrod;
          border-style: hidden hidden outset hidden;
-       `}
+       `*/}
     };
     
     var header = {
