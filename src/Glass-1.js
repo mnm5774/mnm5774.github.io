@@ -210,8 +210,8 @@ created 5-11.
        	 				element.style [property] = object.styles [property];}
 			};
 			
-			if (object.attributes [0]) {setAttributes (this)};
-			if (object.styles [0]) {setStyle (this)};
+			if (this.attributes [0]) {setAttributes (this)};
+			if (this.styles [0]) {setStyle (this)};
 
 			this.element = element;
 				console.log (this);
