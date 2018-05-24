@@ -1,5 +1,11 @@
 // First, the router is invoked, with the comonent name as an argument.
 // Secondly a view is invoked, depending on the component passed.
+
+/* I think the purpose of having a view here is to determine and name all of the content
+we need, external and internal. Then we request all of this from the API. The controller
+handles the internal templates, and our js querying externally would handle requests for
+other content.
+*/
 var views = {
 	navbar: function (pageView, data, params) {
 		var pageView = pageView;
