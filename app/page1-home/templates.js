@@ -23,7 +23,7 @@ var page1Templates = {
       styles: {
         display: `grid`,
         border: `7px`,
-        // not sure if this format works yet.
+        // this multiple words format does not work yet.
         backgroundImage: `url ('/photos-highres/stars1.jpg')`,
         
         //just for test.
@@ -34,7 +34,6 @@ var page1Templates = {
          min-height: 36vw;
          background-repeat: no-repeat;
          background-color: #222;
-         border: 7px;
          border-color: darkgoldenrod;
          border-style: hidden hidden outset hidden;
        `}
