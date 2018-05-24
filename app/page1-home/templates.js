@@ -1,3 +1,13 @@
+/* So the controller should handle the compiling of the content, and calling render.
+The template should handle the actual creating of the elements, assigning event
+listeners where needed, and I think handling and hiding each of the elements created
+as JS objects; which is possible because of my library.
+
+If we modularize each individual item here, and append them in the controller, I think
+it will make it simpler to add and use these items in other components, reducing code.
+Also, if I decide to handle external content in the controller, it will be simpler to
+incorporate it into the new internal content.
+*/
 var page1Templates = {
   // here's what I want:
   hero: function () {
