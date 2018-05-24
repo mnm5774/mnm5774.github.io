@@ -201,7 +201,7 @@ created 5-11.
 			
 			function setAttributes (object) {
 				for (var property in object.attributes) {
-					element.setAttribute (property, object.attributes [property];}
+					element.setAttribute (property, object.attributes [property]);}
 			};
 							   
 			function setStyle (object) {
