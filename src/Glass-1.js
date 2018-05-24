@@ -200,6 +200,7 @@ created 5-11.
 			};*/ //trying using an object for multiple attributes.
 			
 			function setAttributes (object) {
+				console.log (object);
 				for (var property in object.attributes) {
 					element.setAttribute (property, object.attributes [property]);}
 			};
