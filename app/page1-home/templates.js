@@ -24,7 +24,7 @@ var page1Templates = {
         display: `grid`,
         border: `7px`,
         // this multiple words format does not work yet.
-        backgroundImage: `url ('/photos-highres/stars1.jpg')`
+        `background-image`: `url ('/photos-highres/stars1.jpg')`
         
         /*just for test.
         string: `
