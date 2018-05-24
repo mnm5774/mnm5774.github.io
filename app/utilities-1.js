@@ -45,6 +45,7 @@ in the console for reference in where the error occurred in the flow of things.
 */
 
 var utils = (function () {
+	/* cleaning utils up.
   var extract_params = function (params_string) {
 
     var params = {};
@@ -68,10 +69,11 @@ var utils = (function () {
 
     //console.log ('post-parameters:  ' + params);
     return params;
-  };
+  };*/
 
     // invoked on page load.
     return {
+	// first function invoke. universally, how the front-end contacts the back-end.
         router: function (route, data) {
         	// this sets the default route, when no route is passed.
             route = route || location.hash.slice(1) || 'home';
