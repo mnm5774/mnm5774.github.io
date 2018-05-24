@@ -3,7 +3,19 @@
 
 /* I need to create a flag variable in the render method for either append or innerhtml.
 This will determine if the content will be replaced, or added. This is a good example
-of why the utilities and components are broken up so much. We can have options.
+of why the utilities and components are broken up so much. We can have options, without
+complicating. The controller handles internal content, compiles it together, and sends
+it to render to be inserted on the page.
+*/
+/* Something I don't understand here, is if we had external content to request, how
+would it be inserted into the content here if that is handled by the view and utils?
+I wonder if the JS for that would call render as well, to be inserted specifically.
+In that case it would need to happen after this content is inserted. I might want
+to come up with a better system for grabbing the containing elements. If I use my library
+to create the root containers, I can eliminate the need for classes and ids, in this
+context. This would further solidify my structure, with less chance of inserting things
+in the wrong place in the future, as I may add elements with conflicting classes and
+ids, by accident. Will have to think about this further.
 */
 var controllers = {
 	navbar: function (data, params) {
