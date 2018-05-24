@@ -18,8 +18,8 @@ var page1Templates = {
     */
     var parent = {
       type: 'div',
-      attributes: ['class'],
-        attVals: ['hero'],
+      attributes: ['class', 'id'],
+        attVals: ['heroclass', 'heroid'],
       styles: {
         display: `grid`,
         border: `7px`,
