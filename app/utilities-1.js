@@ -95,28 +95,10 @@ var utils = (function () {
                 views [function_to_invoke] (function_to_invoke, data, params);
             }
         },
-
-        render: function (element_id, content, convert_markdown) {
-            convert_markdown = convert_markdown || false;
-           	//console.log ('the container content is being inserted into : ' + element_id);
-
-            if (!convert_markdown) {
-                document.getElementById (element_id).append (content);
-            }
-            // not sure yet what convert_markdown is used for, but we pass it in the
-            // controller. showdown is not defined as well?
-            else {
-                var converter = new showdown.Converter ();
-                document.getElementById (element_id).innerHTML = converter.makeHtml (content);   
-            }
-            // this is causing some bugginess right now.
-            // document.getElementById (element_id).scrollIntoView ();
-        },
-
-        // This function is for illustration as there is really no need for ajax here...
-        request: function (controller_to_invoke, api_stub, success_callback, error_callback,
+	    
+	request: function (controller_to_invoke, api_stub, success_callback, error_callback,
                           callback_params) {
-        	// these are not important, or used currently. Once again, I think this is for
+        // these are not important, or used currently. Once again, I think this is for
           // external requests.
         	var controller_to_invoke = controller_to_invoke || 'home';
             api_stub = api_stub || '';
@@ -136,8 +118,10 @@ var utils = (function () {
             */
 
 			      // ok here we go. - this works.
+		// call the controller requested for internally stored content.
 			      controllers [controller_to_invoke] ();
-
+		
+		// make a request for externally stored content, determined by the view.
             //external server request? not currently being used.
             //var url = config.api_server + api_stub;
 
@@ -165,13 +149,35 @@ var utils = (function () {
             // x.send ();
         },
 
-        get_link: function (post) {
+	    // final request, actually rendering the new content on the page.
+	    // here is where we determine where the content will be inserted.
+        render: function (element_id, content, convert_markdown) {
+            convert_markdown = convert_markdown || false;
+           	//console.log ('the container content is being inserted into : ' + element_id);
+
+            if (!convert_markdown) {
+                document.getElementById (element_id).append (content);
+            }
+            // not sure yet what convert_markdown is used for, but we pass it in the
+            // controller. showdown is not defined as well?
+            else {
+                var converter = new showdown.Converter ();
+                document.getElementById (element_id).innerHTML = converter.makeHtml (content);   
+            }
+            // this is causing some bugginess right now.
+            // document.getElementById (element_id).scrollIntoView ();
+        },
+
+
+
+        /* for getting external content-probably doesn't belong in utils.
+	get_link: function (post) {
             var link = '#post?' + post.post;
             if (post.external_link) {
                 link = post.external_link;
             }
             return link;
-        }
+        }*/
     }
 })();
 
