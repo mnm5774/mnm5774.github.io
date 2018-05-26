@@ -64,8 +64,7 @@ var page1Templates = {
     /**********************************************************************************************/
     var input = {
       type: 'input',
-      attributes: ['class'],
-        attVals: ['test-input']};
+      attributes: {class: 'test-input'}};
     var button = {
       type: 'button',
         text: 'click here'};
