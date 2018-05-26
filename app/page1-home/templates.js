@@ -41,14 +41,12 @@ var page1Templates = {
     
     var header = {
       type: 'h1',
-      attributes: ['class'],
-        attVals: ['hero-header'],
+      attributes: {class: 'hero-header'},
         text: 'The Showcase'};
     
     var intro = {
       type: 'a',
-      attributes: ['class'],
-        attVals: ['hero-text'],
+      attributes: {class: 'hero-text'},
         text: `Welcome. Here is where I showcase my portfolio, play with code and further my
           knowledge.`};
         
@@ -81,8 +79,7 @@ var page1Templates = {
     function addText () {
       var obj = {
         type: 'div',
-        attributes: ['class'],
-          attVals: ['unique entry'],
+        attributes: {class: 'unique-entry'},
           text: testin.value};
       var newEl = MM (obj);
       newEl.append (obj.text);
