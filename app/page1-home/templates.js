@@ -21,21 +21,16 @@ var page1Templates = {
       attributes: {class: `heroclass`, id: `heroid`},
       styles: {
         display: `grid`,
+        justifyContent: `center`,
         border: `7px`,
-        // this multiple words format does not work yet.
-        backgroundImage: `url('/photos-highres/stars1.jpg')`
-        
-        /*just for test.
-        string: `
-         justify-content: center;
-         background-image: url('/photos-highres/stars1.jpg');
-         background-size: cover;
-         min-height: 36vw;
-         background-repeat: no-repeat;
-         background-color: #222;
-         border-color: darkgoldenrod;
-         border-style: hidden hidden outset hidden;
-       `*/}
+        borderColor: `darkgoldenrod`,
+        borderStyle: `hidden hidden outset hidden`,
+        backgroundImage: `url('/photos-highres/stars1.jpg')`,
+        backgroundSize: `cover`,
+        backgroundRepeat: `no-repeat`,
+        backgroundColor: `#222`,
+        minHeight: `36vw`
+      }
     };
     
     var header = {
