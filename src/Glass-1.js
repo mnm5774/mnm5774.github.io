@@ -186,18 +186,6 @@ created 5-11.
 		*/
 		newElement: function () {
 			var element = document.createElement (this.type);
-
-			/* The reason we need to separate the style properties from their values is so
-			that if that particular style exists on the element already, we will write over
-			the value, rather than creating a duplicate style with a different value.
-			
-			function setAttributes (object) {
-				object.attributes.forEach (function (a) {
-					var index = a.indexOf (object.attributes);
-					var value = object.attVals [index];
-					element.setAttribute (a, value);
-				})
-			};*/ //trying using an object for multiple attributes.
 			
 			function setAttributes (object) {
 				for (var property in object.attributes) {
