@@ -37,12 +37,12 @@ var page1Templates = {
       type: 'h1',
       attributes: {class: 'hero-header'},
       styles: {
-        justifySelf: `center,
+        justifySelf: `center`,
         fontSize: `5.0vw`,
         fontFamily: `TimesNewRoman`,
         opacity: `0.5`,
         justifySelf: `center`,
-        color: `darkgrey`
+        color: `darkgrey`,
         textRendering: `optimizeLegibility`,
         textShadow: `0px -7px black`
       },
