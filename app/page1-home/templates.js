@@ -36,7 +36,18 @@ var page1Templates = {
     var header = {
       type: 'h1',
       attributes: {class: 'hero-header'},
-        text: 'The Showcase'};
+      styles: {
+        justifySelf: `center,
+        fontSize: `5.0vw`,
+        fontFamily: `TimesNewRoman`,
+        opacity: `0.5`,
+        justifySelf: `center`,
+        color: `darkgrey`
+        textRendering: `optimizeLegibility`,
+        textShadow: `0px -7px black`
+      },
+      text: 'The Showcase'
+    };
     
     var intro = {
       type: 'a',
@@ -55,7 +66,7 @@ var page1Templates = {
     ie.append (intro.text);
     pe.append (he, ie);
     
-    /**********************************************************************************************/
+    /*********************************************************************************************
     var input = {
       type: 'input',
       attributes: {class: 'test-input'}};
@@ -80,7 +91,7 @@ var page1Templates = {
       console.log (pe);
     }
     
-    testbt.addEventListener ('click', addText);
+    testbt.addEventListener ('click', addText);*/
     
     return pe;
       
