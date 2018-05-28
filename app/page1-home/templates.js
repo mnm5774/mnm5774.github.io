@@ -19,7 +19,6 @@ var page1Templates = {
     var parent = {
       type: `div`,
       attributes: {class: `heroclass`, id: `heroid`},
-        attVals: ['heroclass', 'heroid'],
       styles: {
         display: `grid`,
         border: `7px`,
