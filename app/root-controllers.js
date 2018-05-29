@@ -23,6 +23,10 @@ ids, by accident. Will have to think about this further.
 view. Each controller here handles querying for specific content, internal or external,
 then compiling it together and inserting it appropriately. This allows for invocation
 of render, passing a single component to be inserted where specified.
+
+So here I control the event listeners, how the elements are appended to each other,
+and requesting the content from multiple sources. We could also request other components
+here as child elements, without having to create a new view, or invoking router.
 */
 var controllers = {
 	navbar: function (data, params) {
