@@ -32,16 +32,13 @@ var version = 1.0;
 
 // These methods provide the functionality for my SPA.
 
-/* The reason for console logging each method is to help me better understand the
-flow of what is happening, and to visualize the process. I'm probably going to
-restructure most of this at some point.
-*/
-
 /* Another note, I will probably want to construct my own custom 404 page, and use
 that for the default page/view/controller to invoke as we go. That way if there's
 something wrong in the routing, and invocation of the API, we will know. Probably
 will need to include a link back to the home page, and maybe need to throw an error
 in the console for reference in where the error occurred in the flow of things.
+
+Will also want to research handling URLs, and bookmarks for requesting content here.
 */
 
 var utils = (function () {
@@ -123,6 +120,12 @@ var utils = (function () {
 		
 		// make a request for externally stored content, determined by the view.
             //external server request? not currently being used.
+		/* this probably should take place in the controller, not utils. I think
+		the controller will be the central place for requesting external content.
+		this will allow internal and external content to be integrated with each
+		other seamlessly, depending completely on the controller for that particular
+		component, allowing for customization.
+		*/
             //var url = config.api_server + api_stub;
 
             var x = new XMLHttpRequest ();
