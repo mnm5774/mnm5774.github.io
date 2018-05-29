@@ -7,6 +7,7 @@ of why the utilities and components are broken up so much. We can have options, 
 complicating. The controller handles internal content, compiles it together, and sends
 it to render to be inserted on the page.
 */
+
 /* Something I don't understand here, is if we had external content to request, how
 would it be inserted into the content here if that is handled by the view and utils?
 I wonder if the JS for that would call render as well, to be inserted specifically.
@@ -16,6 +17,12 @@ to create the root containers, I can eliminate the need for classes and ids, in 
 context. This would further solidify my structure, with less chance of inserting things
 in the wrong place in the future, as I may add elements with conflicting classes and
 ids, by accident. Will have to think about this further.
+*/
+
+/* 5-29-18: Update from above. Request handles the multiple component requests from the
+view. Each controller here handles querying for specific content, internal or external,
+then compiling it together and inserting it appropriately. This allows for invocation
+of render, passing a single component to be inserted where specified.
 */
 var controllers = {
 	navbar: function (data, params) {
