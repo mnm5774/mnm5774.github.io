@@ -16,7 +16,7 @@ var page1Templates = {
     /* So here we have an object, which is fed as the argument to create a new MM object. MM
     handles the functionality needed to support the object, and changes in these parameters.
     */
-    var parent = {
+    var container = {
       type: `div`,
       attributes: {class: `heroclass`, id: `heroid`},
       styles: {
@@ -33,7 +33,7 @@ var page1Templates = {
       }
     };
     
-    var header = {
+    var title = {
       type: 'h1',
       attributes: {class: 'hero-header'},
       styles: {
@@ -49,9 +49,16 @@ var page1Templates = {
       text: 'The Showcase'
     };
     
-    var intro = {
-      type: 'a',
-      attributes: {class: 'hero-text'},
+    var description = {
+      type: `a`,
+      attributes: {class: `hero-text`},
+      styles: {
+        alignSelf: `end`,
+        paddingBottom: `20px`,
+        color: `darkgoldenrod`,
+        fontFamily: `TimesNewRoman`,
+        fontSize: `1.9vw`
+      },
         text: `Welcome. Here is where I showcase my portfolio, play with code and further my
           knowledge.`};
         
@@ -97,7 +104,22 @@ var page1Templates = {
       
   },
 
+/*5 lines (14 sloc)  290 Bytes
+ home page content. 
+#body {
+  display: grid;
+  font-family: Perpetua, TimesNewRoman;
+  margin: 0;
+  text-align: justify;
+  text-indent: 50px;
+  background-color: snow;
+  padding: 60px 30px 40px 30px;
+}
 
+  #body p {
+    font-size: 20px;
+    padding: 10px 0px 10px 0px;
+  }*/
 
   home: function (data) {
     var content = document.createTextNode (`
