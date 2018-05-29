@@ -21,8 +21,8 @@ var views = {
 
 	    // invoke a request to the API.
 	    //utils.request (page_view, api_stub, 'show_all_posts', 'show_all_posts_error');
-		utils.request ('hero');
-		utils.request ('home');
+		utils.request ('homeHero');
+		utils.request ('homeContent');
 	},
 
 	code: function (pageView, data, params) {
