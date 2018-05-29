@@ -31,6 +31,7 @@ here as child elements, without having to create a new view, or invoking router.
 
 // Variables for root container elements. This may change.
 var heroId = 'hero';
+var bodyId = 'body';
 
 var controllers = {
 	defaultHero: function () {
@@ -55,6 +56,30 @@ var controllers = {
 	},
 	
 	homeContent: function () {
+		var content = page1Templates.home ();
+		
+		var containerE = MM (content.container);
+		var headerE = MM (content.header);
+			headerE.append (content.header.text);
+		var introP1E = MM (content.introP1);
+			introP1E.append (content.introP1.text);
+		var introP2E = MM (content.introP2);
+			introP2E.append (content.introP2.text);
+		var aboutE = MM (content.about);
+			aboutE.append (content.about.text);
+		var fillerE = MM (content.filler);
+			fillerE.append (content.filler.text);
+		
+		/* need to build a function to add these to all p tags.
+		may add this functionality to library later.
+  #body p {
+    font-size: 20px;
+    padding: 10px 0px 10px 0px;
+  }*/
+		
+		containerE.append (headerE, introP1E, introP2E, aboutE, fillerE);
+		
+		utils.render (bodyId, containerE);
 	},
 	
 	
