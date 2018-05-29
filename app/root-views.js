@@ -12,11 +12,6 @@ var views = {
 		utils.request (pageView);
 	},
 
-	hero: function (pageView, data, params) {
-		var pageView = pageView;
-		utils.request (pageView);
-	},
-
 	home: function (page_view, data, params) {
 		var page_view = page_view || 'home';
 	    // var api_stub = 'posts/index.json'; not needed. not sure, but I think this
@@ -25,7 +20,9 @@ var views = {
 	    var api_stub = '';
 
 	    // invoke a request to the API.
-	    utils.request (page_view, api_stub, 'show_all_posts', 'show_all_posts_error');
+	    //utils.request (page_view, api_stub, 'show_all_posts', 'show_all_posts_error');
+		utils.request ('hero');
+		utils.request ('home');
 	},
 
 	code: function (pageView, data, params) {
