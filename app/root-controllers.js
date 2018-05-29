@@ -33,15 +33,6 @@ here as child elements, without having to create a new view, or invoking router.
 var heroId = 'hero';
 
 var controllers = {
-	homeContent: function () {
-	},
-	
-	// For now, request the default hero.
-	homeHero: function () {
-		utils.request ('defaultHero')
-	},
-	
-	
 	defaultHero: function () {
 		var content = page1Templates.hero ();
 		
@@ -56,6 +47,18 @@ var controllers = {
 		
 		utils.render (heroId, containerE);
 	},
+	
+	
+	// For now, request the default hero.
+	homeHero: function () {
+		utils.request ('defaultHero')
+	},
+	
+	homeContent: function () {
+	},
+	
+	
+
 	
 	
 	navbar: function (data, params) {
