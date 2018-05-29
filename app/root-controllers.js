@@ -28,7 +28,36 @@ So here I control the event listeners, how the elements are appended to each oth
 and requesting the content from multiple sources. We could also request other components
 here as child elements, without having to create a new view, or invoking router.
 */
+
+// Variables for root container elements. This may change.
+var heroId = 'hero';
+
 var controllers = {
+	homeContent: function () {
+	},
+	
+	// For now, request the default hero.
+	homeHero: function () {
+		utils.request ('defaultHero')
+	},
+	
+	
+	defaultHero: function () {
+		var content = page1Templates.hero ();
+		
+		var containerE = MM (content.container);
+		var titleE = MM (content.title);
+		var descriptionE = MM (content.description);
+		
+		titleE.append (content.title.text);
+		descriptionE.append (content.description.text);
+		
+		containerE.append (titleE, descriptionE);
+		
+		utils.render (heroId, containerE);
+	},
+	
+	
 	navbar: function (data, params) {
 		//console.log (data);
 
