@@ -9,13 +9,7 @@ Also, if I decide to handle external content in the controller, it will be simpl
 incorporate it into the new internal content.
 */
 var page1Templates = {
-  // here's what I want:
   hero: function () {
-    // Here's an example of how we would use variables to simplify changing aspects of a webpage.
-    
-    /* So here we have an object, which is fed as the argument to create a new MM object. MM
-    handles the functionality needed to support the object, and changes in these parameters.
-    */
     var container = {
       type: `div`,
       attributes: {class: `heroclass`, id: `heroid`},
@@ -61,9 +55,12 @@ var page1Templates = {
       },
         text: `Welcome. Here is where I showcase my portfolio, play with code and further my
           knowledge.`};
+    
+    return {container, title, description};
         
     // Creating a new object returns that element. This will be the parent element.
     // need to figure out how to remove the below step.
+    /*
     var pe = MM (parent);
     var he = MM (header);
     var ie = MM (intro);
@@ -71,7 +68,7 @@ var page1Templates = {
     // Append the elements, all inside the parent.
     he.append (header.text);
     ie.append (intro.text);
-    pe.append (he, ie);
+    pe.append (he, ie);*/
     
     /*********************************************************************************************
     var input = {
@@ -98,9 +95,9 @@ var page1Templates = {
       console.log (pe);
     }
     
-    testbt.addEventListener ('click', addText);*/
+    testbt.addEventListener ('click', addText);
     
-    return pe;
+    return pe;*/
       
   },
 
