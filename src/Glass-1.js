@@ -65,6 +65,8 @@ created 5-11.
 
 /********************************************************************************************************************/
 
+	// I'm leaving this stuff here for now. Will need to be cleaned up later, if I decide to
+	// keep this code.
 
 	/* Note that all of the variables declared here are NOT available in all of the objects
 	created here, but are available to all of the methods available to the objects, through
@@ -201,8 +203,6 @@ created 5-11.
 			setStyle (this);
 
 			this.element = element;
-				console.log (this);
-				console.log (this.element);
 			return element;
 		}
 	};
@@ -224,29 +224,23 @@ created 5-11.
 		*/
 		var that = this;
 
-		/* Here we take the arguments given and write them to the object. Otherwise,
-		we have default values for these options, so that we can simply call the
-		library to get a new HTML object.
-		Note: arguments given are now optional, contained in the template object.
-
-		In terms of web applications, I think if I had multiple sites, we would have
-		different default values setup here.
+		/* Here we take the object passed to the library, and create a new element
+		according to the specified properties in the object. I think this template
+		is fairly simple, and scalable.
 		*/
 		that.type = obj.type || 'div' ||
 			'add tag for element, in string format.',
 
 		that.attributes = obj.attributes || [] ||
-			'add all attributes in an array. order matches value array.',
-		that.attVals = obj.attVals || [] ||
-			'add values for attributes in an array. order matches attributes array.',
+			'add all attributes as properties in an object.',
 
 		that.styles = obj.styles || [] ||
-			'add style properties in an array. order matches style values array.',
-		/*that.styVals = obj.styVals || [] ||
-			'style values in an array. order matches styles array.',*/
+			'add all styles as properties in an object.',
 
+		// Store the actual element, regardless if it's in the DOM or not.
 		that.element = obj.element || that.newElement ();
 
+		// Default to returning the actual element.
 		return that.element;
 	};
 
