@@ -1,4 +1,4 @@
-// First, the router is invoked, with the comonent name as an argument.
+// First, the router is invoked, with the component name as an argument.
 // Secondly a view is invoked, depending on the component passed.
 
 /* I think the purpose of having a view here is to determine and name all of the content
