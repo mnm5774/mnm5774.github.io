@@ -69,10 +69,7 @@ var controllers = {
 		I would request them, then append each one as the styles are added.
 		Everything applied here is applied to all my p tag objects.
 		*/
-		
-		var paragraphs = {
-			content.introP1, content.introP2, content.about, content.filler
-		};
+
 		// Add styles before creating the paragraph elements.
 		function p (object) {
 			for (p in object) {
@@ -81,7 +78,7 @@ var controllers = {
 					padding: `10px 0px 10px 0px`
 				}
 			}
-		}(paragraphs);
+		}(content);
 		
 		var containerE = MM (content.container);
 		var headerE = MM (content.header);
