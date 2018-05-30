@@ -32,13 +32,14 @@ I may want to reassess my code here at some point. Some of the functionality for
 elements could be added in my library, for access to other controllers as needed.
 */
 
+
 // Variables for root container elements. This may change. Also, calling render in
 // the controller may cause problems if we call other controllers as child elements.
 // rather than returning the child, it will insert it. I think I will have to
 // separate components based on their function, child elements or standalone
 // components that are inserted.
-var heroId = 'hero';
-var bodyId = 'body';
+var heroId = `hero`;
+var bodyId = `body`;
 
 var controllers = {
 	defaultHero: function () {
@@ -59,7 +60,7 @@ var controllers = {
 	
 	// For now, request the default hero.
 	homeHero: function () {
-		utils.request ('defaultHero')
+		utils.request (`defaultHero`)
 	},
 	
 	homeContent: function () {
