@@ -78,7 +78,7 @@ var controllers = {
 					padding: `10px 0px 10px 0px`
 				}
 			}
-		}(content.introP1, content.introP2, content.about, content.filler);
+		}({content.introP1, content.introP2, content.about, content.filler});
 		
 		var containerE = MM (content.container);
 		var headerE = MM (content.header);
