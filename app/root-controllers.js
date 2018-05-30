@@ -3,7 +3,7 @@
 
 /* I need to create a flag variable in the render method for either append or innerhtml.
 This will determine if the content will be replaced, or added. This is a good example
-of why the utilities and components are broken up so much. We can have options, without
+of why the utilities and components are broken up so much. There are more options, without
 complicating. The controller handles internal content, compiles it together, and sends
 it to render to be inserted on the page.
 */
@@ -27,9 +27,16 @@ of render, passing a single component to be inserted where specified.
 So here I control the event listeners, how the elements are appended to each other,
 and requesting the content from multiple sources. We could also request other components
 here as child elements, without having to create a new view, or invoking router.
+
+I may want to reassess my code here at some point. Some of the functionality for multiple
+elements could be added in my library, for access to other controllers as needed.
 */
 
-// Variables for root container elements. This may change.
+// Variables for root container elements. This may change. Also, calling render in
+// the controller may cause problems if we call other controllers as child elements.
+// rather than returning the child, it will insert it. I think I will have to
+// separate components based on their function, child elements or standalone
+// components that are inserted.
 var heroId = 'hero';
 var bodyId = 'body';
 
@@ -58,6 +65,21 @@ var controllers = {
 	homeContent: function () {
 		var content = page1Templates.home ();
 		
+		/* So here, if I was pulling paragraphs from a database, say in a blog,
+		I would request them, then append each one as the styles are added.
+		Everything applied here is applied to all my p tag objects.
+		*/
+		
+		// Add styles before creating the paragraph elements.
+		function p (object) {
+			for (p in object) {
+				p.style = {
+					fontSize: `20px`,
+					padding: `10px 0px 10px 0px`
+				}
+			}
+		}(content.introP1, content.introP2, content.about, content.filler);
+		
 		var containerE = MM (content.container);
 		var headerE = MM (content.header);
 			headerE.append (content.header.text);
@@ -69,13 +91,6 @@ var controllers = {
 			aboutE.append (content.about.text);
 		var fillerE = MM (content.filler);
 			fillerE.append (content.filler.text);
-		
-		/* need to build a function to add these to all p tags.
-		may add this functionality to library later.
-  #body p {
-    font-size: 20px;
-    padding: 10px 0px 10px 0px;
-  }*/
 		
 		containerE.append (headerE, introP1E, introP2E, aboutE, fillerE);
 		
@@ -97,7 +112,7 @@ var controllers = {
 		utils.render ('navbar', finalContent);
 	},
 
-	home: function (data, params) {
+	//home: function (data, params) {
 		//console.log (data);
 
 		// this looks like more of inserting the external data requested into our page.
@@ -117,31 +132,6 @@ var controllers = {
 	    } */
 	    // get recent posts
 	    // var recent_posts = templates.recent_posts (template_context);
-
-	  // Get our template for this page. The more I think about it, the more I think
-	  // this is where we can grab multiple components for one request. We will see.
-	  var page1_home = page1Templates.home ();
-
-	  // Here is where we would probably add the items together to produce a final
-	  // content variable, with multiple objects inserted.
-	  // var page1_home = fullPage;  + recent_posts;
-
-	  //console.log ('content is grabbed, and ready to invoke render!');
-	  // Now actually render the html on the page. First argument is the id of the
-		// containing element where the template will be inserted. second argument is
-		// the content that will be inserted. This is where my naming convention for
-		// the html may be affected. Might need to adjust that.
-	  utils.render ('body', page1_home);    
-
-	  // Hero content-invoked after home because content should be priority. Plus
-		// this helps with debugging; having them load separately. The reason they
-		// are together in this controller, is because I think I will have different
-		// heros for different pages later on.
-		var heroContent = page1Templates.hero ();
-
-		//console.log ('hero is grabbed, and ready to invoke render!');
-		utils.render ('hero', heroContent);
-	},
 
 	code: function (data, params) {
 		//console.log (data);
