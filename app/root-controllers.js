@@ -71,15 +71,13 @@ var controllers = {
 		*/
 
 		// Add styles before creating the paragraph elements.
-		function p (object) {
-			for (p in object) {
-				p.style = {
-					fontSize: `20px`,
-					padding: `10px 0px 10px 0px`
-				};
-				console.log (p);
-			}
-		}(content);
+		for (p in content) {
+			p.style = {
+				fontSize: `20px`,
+				padding: `10px 0px 10px 0px`
+			};
+			console.log (p);
+		};
 		
 		var containerE = MM (content.container);
 		var headerE = MM (content.header);
