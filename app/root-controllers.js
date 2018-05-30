@@ -74,7 +74,7 @@ var controllers = {
 
 		// Add styles before creating the paragraph elements.
 		paragraphs.forEach (function (p) {
-				p.style = {
+				p.styles = {
 					fontSize: `20px`,
 					padding: `10px 0px 10px 0px`
 				};
