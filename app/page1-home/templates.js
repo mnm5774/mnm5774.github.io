@@ -65,12 +65,12 @@ var page1Templates = {
         textAlign: `justify`,
         textIndent: `50px`
       }
-    },
+    };
         
     var header = {
       type: `h1`,
       text: `Hi. Welcome to my portfolio.`
-    },
+    };
         
     var introP1 = {
       type: `p`,
@@ -82,7 +82,7 @@ The purpose of this site originally started as an exercise for learning Javascri
 visual aid for understanding what is happening under the hood in the browser when the code
 is parsed and executed. I soon realized the need for having a portfolio available for review
 as well.`
-    },
+    };
         
     var introP2 = {
       type: `p`,
@@ -90,7 +90,7 @@ as well.`
 for a while. Everything you see is dynamically created and rendered via vanilla Javascript. A
 lot of code I have is written by me, though there are also plenty of blocks I have acquired
 along my path of learning Javascript.`
-    },
+    };
         
     var about = {
       type: `p`,
@@ -105,7 +105,7 @@ and handling customer requests.
 
 I enjoy casually playing various instruments. I am occasionally a live sound technician, and
 enjoy going to concerts. I also like to play video games.`
-    },
+    };
         
     var filler = {
       type: `p`,
