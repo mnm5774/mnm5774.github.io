@@ -49,9 +49,6 @@ var controllers = {
 		var titleE = MM (content.title).newElement ();
 		var descriptionE = MM (content.description).newElement ();
 		
-		//titleE.append (content.title.text);
-		//descriptionE.append (content.description.text);
-		
 		containerE.append (titleE, descriptionE);
 		
 		utils.render (heroId, containerE);
@@ -66,35 +63,13 @@ var controllers = {
 	homeContent: function () {
 		var content = page1Templates.home ();
 		
-		/* So here, if I was pulling paragraphs from a database, say in a blog,
-		I would request them, then append each one as the styles are added.
-		Everything applied here is applied to all my p tag objects.
-		*/
-		
-		//var paragraphs = [content.introP1, content.introP2, content.about, content.filler];
-
-		// Add styles before creating the paragraph elements.
-		/*paragraphs.forEach (function (p) {
-				p.styles = {
-					fontSize: `20px`,
-					padding: `10px 0px 10px 0px`
-				};
-				console.log (p);
-			}
-		);*/
-		
-		// The variables here actually get the content.
+		// The variables here actually get the content, apply styles to paragraphs.
 		var containerE = MM (content.container).newElement ();
 		var headerE = MM (content.header).newElement ();
-			//headerE.append (content.header.text);
 		var introP1E = MM (content.introP1).applyStyles (content.pSty).newElement ();
-			//introP1E.append (content.introP1.text);
 		var introP2E = MM (content.introP2).applyStyles (content.pSty).newElement ();
-			//introP2E.append (content.introP2.text);
 		var aboutE = MM (content.about).applyStyles (content.pSty).newElement ();
-			//aboutE.append (content.about.text);
 		var fillerE = MM (content.filler).applyStyles (content.pSty).newElement ();
-			//fillerE.append (content.filler.text);
 		
 		containerE.append (headerE, introP1E, introP2E, aboutE, fillerE);
 		
