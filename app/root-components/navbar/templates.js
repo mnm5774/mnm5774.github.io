@@ -25,6 +25,19 @@ var navbarTemplates = {
 			styles: {gridArea: `logo`},
 			text: `Marc McKinnis | Portfolio`
 		};
+		
+		var logoPic = {
+			type: `img`,
+			attributes: {
+				class: `nav-pic`,
+				href: `#page1-home`,
+				src: `photos-lowres/profile.jpg`,
+				alt: `profile`
+			},
+			styles: {gridArea: `pic`}
+		};
+		
+		
 
 			
 
