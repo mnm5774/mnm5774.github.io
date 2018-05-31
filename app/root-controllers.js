@@ -71,28 +71,29 @@ var controllers = {
 		Everything applied here is applied to all my p tag objects.
 		*/
 		
-		var paragraphs = [content.introP1, content.introP2, content.about, content.filler];
+		//var paragraphs = [content.introP1, content.introP2, content.about, content.filler];
 
 		// Add styles before creating the paragraph elements.
-		paragraphs.forEach (function (p) {
+		/*paragraphs.forEach (function (p) {
 				p.styles = {
 					fontSize: `20px`,
 					padding: `10px 0px 10px 0px`
 				};
 				console.log (p);
 			}
-		);
+		);*/
 		
+		// The variables here actually get the content.
 		var containerE = MM (content.container).newElement ();
 		var headerE = MM (content.header).newElement ();
 			//headerE.append (content.header.text);
-		var introP1E = MM (content.introP1).newElement ();
+		var introP1E = MM (content.introP1).applyStyles (content.pSty).newElement ();
 			//introP1E.append (content.introP1.text);
-		var introP2E = MM (content.introP2).newElement ();
+		var introP2E = MM (content.introP2).applyStyles (content.pSty).newElement ();
 			//introP2E.append (content.introP2.text);
-		var aboutE = MM (content.about).newElement ();
+		var aboutE = MM (content.about).applyStyles (content.pSty).newElement ();
 			//aboutE.append (content.about.text);
-		var fillerE = MM (content.filler).newElement ();
+		var fillerE = MM (content.filler).applyStyles (content.pSty).newElement ();
 			//fillerE.append (content.filler.text);
 		
 		containerE.append (headerE, introP1E, introP2E, aboutE, fillerE);
