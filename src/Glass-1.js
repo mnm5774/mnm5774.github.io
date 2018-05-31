@@ -201,6 +201,8 @@ created 5-11.
 			
 			setAttributes (this);
 			setStyle (this);
+			
+			element.append (this.text);
 
 			this.element = element;
 			return element;
