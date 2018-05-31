@@ -45,12 +45,12 @@ var controllers = {
 	defaultHero: function () {
 		var content = page1Templates.hero ();
 		
-		var containerE = MM (content.container);
-		var titleE = MM (content.title);
-		var descriptionE = MM (content.description);
+		var containerE = MM (content.container).newElement ();
+		var titleE = MM (content.title).newElement ();
+		var descriptionE = MM (content.description).newElement ();
 		
-		titleE.append (content.title.text);
-		descriptionE.append (content.description.text);
+		//titleE.append (content.title.text);
+		//descriptionE.append (content.description.text);
 		
 		containerE.append (titleE, descriptionE);
 		
@@ -83,16 +83,16 @@ var controllers = {
 			}
 		);
 		
-		var containerE = MM (content.container);
-		var headerE = MM (content.header);
+		var containerE = MM (content.container).newElement ();
+		var headerE = MM (content.header).newElement ();
 			//headerE.append (content.header.text);
-		var introP1E = MM (content.introP1);
+		var introP1E = MM (content.introP1).newElement ();
 			//introP1E.append (content.introP1.text);
-		var introP2E = MM (content.introP2);
+		var introP2E = MM (content.introP2).newElement ();
 			//introP2E.append (content.introP2.text);
-		var aboutE = MM (content.about);
+		var aboutE = MM (content.about).newElement ();
 			//aboutE.append (content.about.text);
-		var fillerE = MM (content.filler);
+		var fillerE = MM (content.filler).newElement ();
 			//fillerE.append (content.filler.text);
 		
 		containerE.append (headerE, introP1E, introP2E, aboutE, fillerE);
