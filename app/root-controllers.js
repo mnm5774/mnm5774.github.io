@@ -85,15 +85,15 @@ var controllers = {
 		
 		var containerE = MM (content.container);
 		var headerE = MM (content.header);
-			headerE.append (content.header.text);
+			//headerE.append (content.header.text);
 		var introP1E = MM (content.introP1);
-			introP1E.append (content.introP1.text);
+			//introP1E.append (content.introP1.text);
 		var introP2E = MM (content.introP2);
-			introP2E.append (content.introP2.text);
+			//introP2E.append (content.introP2.text);
 		var aboutE = MM (content.about);
-			aboutE.append (content.about.text);
+			//aboutE.append (content.about.text);
 		var fillerE = MM (content.filler);
-			fillerE.append (content.filler.text);
+			//fillerE.append (content.filler.text);
 		
 		containerE.append (headerE, introP1E, introP2E, aboutE, fillerE);
 		
