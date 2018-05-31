@@ -242,6 +242,9 @@ created 5-11.
 
 		that.styles = obj.styles || [] ||
 			'add all styles as properties in an object.',
+		
+		that.text = obj.text || '' ||
+			'add text in string format-visible on-page.',
 
 		// Store the actual element, regardless if it's in the DOM or not.
 		that.element = obj.element || that.newElement ();
