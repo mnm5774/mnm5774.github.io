@@ -206,7 +206,11 @@ created 5-11.
 
 			this.element = element;
 			return element;
-		}
+		},
+		
+		// Function for applying one styles object, to multiple elements.
+		// After creation. Overwrites matching, unique styles upon creation.
+		applyStyles: function () {
 	};
 	
 
@@ -243,7 +247,10 @@ created 5-11.
 		that.element = obj.element || that.newElement ();
 
 		// Default to returning the actual element.
-		return that.element;
+		/* Eliminating this for now. Doesn't allow for external access to methods. */
+		//return that.element;
+		
+		return that;
 	};
 
 	/* This sets the prototype to the same as Glass. Makes for clean code,
