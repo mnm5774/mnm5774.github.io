@@ -209,8 +209,12 @@ created 5-11.
 		},
 		
 		// Function for applying one styles object, to multiple elements.
-		// After creation. Overwrites matching, unique styles upon creation.
-		applyStyles: function () {
+		// After creation. Overwrites all other styles upon creation. Will
+		// want to adjust this in the future, to accomodate unique styles.
+		// Need to call this before newElement.
+		applyStyles: function (obj) {
+			this.styles = obj;
+		}
 	};
 	
 
