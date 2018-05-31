@@ -248,15 +248,10 @@ created 5-11.
 		that.styles = obj.styles || [] ||
 			'add all styles as properties in an object.',
 		
-		that.text = obj.text || '' ||
-			'add text in string format-visible on-page.',
+		that.text = obj.text || '',
 
-		// Store the actual element, regardless if it's in the DOM or not.
+		// Store the actual element, if not passed create new element.
 		that.element = obj.element || that.newElement ();
-
-		// Default to returning the actual element.
-		/* Eliminating this for now. Doesn't allow for external access to methods. */
-		//return that.element;
 		
 		return that;
 	};
