@@ -214,6 +214,7 @@ created 5-11.
 		// Need to call this before newElement.
 		applyStyles: function (obj) {
 			this.styles = obj;
+			return this;
 		}
 	};
 	
