@@ -72,6 +72,7 @@ var page1Templates = {
       text: `Hi. Welcome to my portfolio.`
     };
         
+    // Page 1 paragraphs. Styles for these below.
     var introP1 = {
       type: `p`,
       text: `I am Marc McKinnis. Thank you for visiting my application. This entire site
@@ -136,6 +137,11 @@ enjoy going to concerts. I also like to play video games.`
               odio, euismod id cursus sit amet, luctus eleifend sem.`
     };
     
-    return {container, header, introP1, introP2, about, filler};
+    var pSty = {
+      fontSize: `20px`,
+			padding: `10px 0px 10px 0px`
+    };
+    
+    return {container, header, introP1, introP2, about, filler, pSty};
   }
 };
