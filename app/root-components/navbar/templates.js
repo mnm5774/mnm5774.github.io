@@ -1,3 +1,34 @@
+// Sticky navbar, desktop version and mobile version.
+// Mobile not created yet.
+var navbarTemplates = {
+	desktop: function () {
+		var container = {
+			type: `div`,
+			attributes: {class: `nav-links`},
+			styles: {
+				disply: `grid`,
+				gridTemplateRows: `9vh`,
+				gridTemplateColumns: `30% 40% 10% 10% 10%`,
+				gridTemplateAreas: `"logo pic home two three"`,
+				justifyContent: `center`,
+				overflow: `hidden`,
+				backgroundColor: `black`,
+				paddingLeft: `60px`,
+				paddingRight: `60px`,
+				fontSize: `2.0vw`
+			}
+		};
+		
+		var logo = {
+			type: `a`,
+			attributes: {class: `nav-logo`, href: `#home`},
+			styles: {gridArea: `logo`},
+			text: `Marc McKinnis | Portfolio`
+		};
+
+			
+
+
 // navbar html.
 // I think the data argument passed here may be for inserting
 // data from an external source, like a database, or input from
