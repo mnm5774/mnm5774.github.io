@@ -36,6 +36,8 @@ var navbarTemplates = {
 			},
 			styles: {gridArea: `pic`}
 		};
+	}
+};
 		
 		
 
@@ -46,7 +48,7 @@ var navbarTemplates = {
 // I think the data argument passed here may be for inserting
 // data from an external source, like a database, or input from
 // a user on the page.
-var navbarTemplates = {
+/*var navbarTemplates = {
 	nav_desktop: function (data) {
     var html = document.createTextNode (`
       <link rel="stylesheet" href="app/root-components/navbar/styles.css">
@@ -72,4 +74,4 @@ var navbarTemplates = {
     `);
     return html;
   } 
-};
+};*/
