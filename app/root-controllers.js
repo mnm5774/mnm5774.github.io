@@ -32,6 +32,16 @@ I may want to reassess my code here at some point. Some of the functionality for
 elements could be added in my library, for access to other controllers as needed.
 */
 
+/* 5-31-18: Update: I have re-assessed, and what I want here is to be able to create objects,
+and string the methods I need together, for simple and short code. For that, I need the
+methods to already exist in my library. I have done this and tested using the addStyles
+method shown below on homeContent. This seems to work well.
+
+So for other common needs, I need to create methods I can chain together in my library,
+so that I can use the extra space here to append elements how I need them, along with
+fusing them with external content.
+*/
+
 
 // Variables for root container elements. This may change. Also, calling render in
 // the controller may cause problems if we call other controllers as child elements.
@@ -61,6 +71,9 @@ var controllers = {
 	},
 	
 	homeContent: function () {
+		/* Here I could create variables containing paths or API calls to external
+		content. We would also parse JSON here as needed before insertion.
+		*/
 		var content = page1Templates.home ();
 		
 		// The variables here actually get the content, apply styles to paragraphs.
