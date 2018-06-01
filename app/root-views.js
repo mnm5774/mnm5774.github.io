@@ -5,6 +5,12 @@
 we need, external and internal. Then we request all of this from the API. The controller
 handles the internal templates, and our js querying externally would handle requests for
 other content.
+
+6-1-18: Update: Most of the above will be handled in the controller. The view will handle
+larger tasks, closer to the browser. For instance, handling direct navigation via the
+URL, or directing requests via events on the client browser. Not sure yet if this
+is how things are structured in more established environments, but it seems to work
+in this context.
 */
 var views = {
 	navbar: function (pageView, data, params) {
