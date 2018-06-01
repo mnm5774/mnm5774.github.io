@@ -136,12 +136,12 @@ enjoy going to concerts. I also like to play video games.`
               odio. Vivamus euismod ipsum id volutpat commodo. Duis et volutpat velit. Fusce mauris
               odio, euismod id cursus sit amet, luctus eleifend sem.`
     };
-    
-    var pSty = {
-      fontSize: `20px`,
+		
+		var pSty = {
+			fontSize: `20px`,
 			padding: `10px 0px 10px 0px`
-    };
-    
+		};
+
     return {container, header, introP1, introP2, about, filler, pSty};
   }
 };
