@@ -40,6 +40,18 @@ method shown below on homeContent. This seems to work well.
 So for other common needs, I need to create methods I can chain together in my library,
 so that I can use the extra space here to append elements how I need them, along with
 fusing them with external content.
+
+I will probably want to separate the controllers that are parent elements (like a page
+controller, which invokes render), from the child elements (like the components called
+in a page controller, which return the component to be rendered in the parent controller).
+The other way we could do this is to handle the rendering in the view, and simply return
+each component as the controller is called. I think this method may complicate things,
+especially as I build functionality in the views for handling URls, and other routing
+tasks. Also, handling that here enables us to build many simple controllers easily,
+based on specific requests in the DOM, that just compile what is requested. I think
+that will allow us to stick to the initial intent of dynamically rendering only what
+is requested, instead of reloading certain elements because of calling a view with
+updated parameters.
 */
 
 
