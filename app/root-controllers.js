@@ -105,6 +105,14 @@ var controllers = {
 	navbar: function (data, params) {
 		var content = navbarTemplates.desktop ();
 		
+		var containerE = MM (content.container).newElement ();
+		var logoE = MM (content.logo).newElement ();
+		var logoPicE = MM (content.logoPic).newElement ();
+		
+		var page1E = MM (content.page1).newElement ();
+		var page2E = MM (content.page2).newElement ();
+		var page3E = MM (content.page3).newElement ();
+		
 		function checkNav () {
 			// Create the variables needed to determine to add sticky class.
 			var navStuckAt = window.scrollY > hero.element.offsetHeight;
