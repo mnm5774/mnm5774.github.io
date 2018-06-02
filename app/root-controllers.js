@@ -61,6 +61,7 @@ updated parameters.
 // separate components based on their function, child elements or standalone
 // components that are inserted.
 var heroId = `hero`;
+var navId = `navbar`;
 var bodyId = `body`;
 
 var controllers = {
@@ -104,7 +105,9 @@ var controllers = {
 	navbar: function (data, params) {
 		var content = navbarTemplates.desktop ();
 		
-		utils.render ('navbar', containerE);
+		window.addEventListener (`scroll`, checkNav);
+		
+		utils.render (navId, containerE);
 	},
 	
 	/************************************************************************************************************/
