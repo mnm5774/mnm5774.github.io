@@ -101,20 +101,13 @@ var controllers = {
 		utils.render (bodyId, containerE);
 	},
 	
-	
-
-	/************************************************************************************************************/
-	
 	navbar: function (data, params) {
-		//console.log (data);
-
-		var desktop = navbarTemplates.nav_desktop ();
-		var mobile = navbarTemplates.nav_mobile ();
-		var finalContent = desktop + mobile;
-
-		//console.log ('navbar is grabbed, and ready to invoke render!');
-		utils.render ('navbar', finalContent);
+		var content = navbarTemplates.desktop ();
+		
+		utils.render ('navbar', containerE);
 	},
+	
+	/************************************************************************************************************/
 
 	//home: function (data, params) {
 		//console.log (data);
