@@ -87,6 +87,6 @@ var navbarTemplates = {
 			width: `100%`
 		};
 
-		return {container, logo, logoPic, page1, page2, page3};
+		return {container, logo, logoPic, page1, page2, page3, linkSty, hoverSty, stickySty};
 	}
 };
