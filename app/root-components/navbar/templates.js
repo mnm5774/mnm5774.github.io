@@ -36,6 +36,24 @@ var navbarTemplates = {
 			},
 			styles: {gridArea: `pic`}
 		};
+		
+		var page1 = {
+			type: `a`,
+			attributes: {class: `nav-page1`},
+			text: `Home`
+		};
+		
+		var page2 = {
+			type: `a`,
+			attributes: {class: `nav-page2`},
+			text: `Code`
+		};
+		
+		var page3 = {
+			type: `a`,
+			attributes: {class: `nav-page3`},
+			text: `Resume`
+		};
 	}
 };
 		
