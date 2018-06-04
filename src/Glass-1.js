@@ -226,6 +226,9 @@ created 5-11.
 		
 		// Need another for removal of styles.
 		removeStyles: function (obj) {
+			console.log ('removing on ' + this);
+			console.log (this.element);
+			console.log (this.element.style);
 			for (var property in obj) {
 				this.element.style [property] = this.styles [property];
 			}
