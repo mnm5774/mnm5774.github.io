@@ -112,6 +112,9 @@ var controllers = {
 		var logoE = MM (content.logo).newElement ();
 		var logoPicE = MM (content.logoPic).newElement ();
 		
+		// For large sets of items we can create a for-in loop for an object,
+		// to handle the repetition here. I did it this way to provide visibility
+		// for now, while I finish determining my structure.
 		var page1E = MM (content.page1).applyStyles (content.linkSty).newElement ();
 		var page2E = MM (content.page2).applyStyles (content.linkSty).newElement ();
 		var page3E = MM (content.page3).applyStyles (content.linkSty).newElement ();
