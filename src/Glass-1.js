@@ -215,6 +215,20 @@ created 5-11.
 		applyStyles: function (obj) {
 			this.styles = obj;
 			return this;
+		},
+		
+		// Need a second function for applying styles to an actual element.
+		addStyles: function (obj) {
+			for (var property in obj) {
+				this.element.style [property] = obj [property];
+			}
+		},
+		
+		// Need another for removal of styles.
+		removeStyles: function (obj) {
+			for (var property in obj) {
+				this.element.style [property] = this.styles [property];
+			}
 		}
 	};
 	
