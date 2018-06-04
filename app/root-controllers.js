@@ -116,15 +116,20 @@ var controllers = {
 		var page2E = MM (content.page2).newElement ();
 		var page3E = MM (content.page3).newElement ();
 		
+		
+		// Makes navbar interactive to top of the window.
 		function checkNav () {
 			var hero = document.getElementById (heroId);
 			var navStuckAt = window.scrollY > hero.offsetHeight;
 			
-			if (navStuckAt) {containerO.addStyles (content.hoverSty)}
-			else {containerO.removeStyles (content.hoverSty)};
+			if (navStuckAt) {containerO.addStyles (content.stickySty)}
+			else {containerO.removeStyles (content.stickySty)};
 		};
 		
 		window.addEventListener (`scroll`, checkNav);
+		
+		
+		containerE.append (logoE, logoPicE, page1E, page2E, page3E);
 		
 		utils.render (navId, containerE);
 	},
