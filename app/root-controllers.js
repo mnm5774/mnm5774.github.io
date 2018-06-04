@@ -105,7 +105,10 @@ var controllers = {
 	navbar: function (data, params) {
 		var content = navbarTemplates.desktop ();
 		
-		var containerE = MM (content.container).newElement ();
+		var containerO = MM (content.container);
+		// Here we differentiate between the object and the element, for access
+		// to functionality after the element is inserted.
+		var containerE = containerO.newElement ();
 		var logoE = MM (content.logo).newElement ();
 		var logoPicE = MM (content.logoPic).newElement ();
 		
@@ -114,13 +117,11 @@ var controllers = {
 		var page3E = MM (content.page3).newElement ();
 		
 		function checkNav () {
-			// Create the variables needed to determine to add sticky class.
-			var navStuckAt = window.scrollY > hero.element.offsetHeight;
+			var hero = document.getElementById (heroId);
+			var navStuckAt = window.scrollY > hero.offsetHeight;
 			
-			if (navStuckAt) {
-				navbar.addClass (`sticky`);
-			}
-			else {navbar.removeClass (`sticky`)};
+			if (navStuckAt) {containerO.addStyles (content.hoverSty)}
+			else {containerO.removeStyles (content.hoverSty)};
 		};
 		
 		window.addEventListener (`scroll`, checkNav);
