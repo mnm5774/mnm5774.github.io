@@ -136,6 +136,8 @@ var controllers = {
 				e.addEventListener (`mouseover`, function () {
 					o.addStyles (content.hoverSty)
 				});
+				
+				containerE.append (e);
 			};
 		};
 						    
@@ -154,7 +156,7 @@ var controllers = {
 		window.addEventListener (`scroll`, checkNav);
 		
 		
-		containerE.append (logoE, logoPicE, page1E, page2E, page3E);
+		//containerE.append (logoE, logoPicE, page1E, page2E, page3E);
 		
 		utils.render (navId, containerE);
 	},
