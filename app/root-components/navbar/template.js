@@ -18,7 +18,7 @@ var navbarTemplates = {
 		};
 
 		var logo = {
-			type: `a`,
+			type: `button`,
 			attributes: {class: `nav-logo`, href: `#home`},
 			styles: {gridArea: `logo`},
 			text: `Marc McKinnis | Portfolio`
@@ -43,21 +43,21 @@ var navbarTemplates = {
 		};
 
 		var page1 = {
-			type: `a`,
+			type: `button`,
 			attributes: {class: `nav-page1`},
 			styles: {gridArea: `home`},
 			text: `Home`
 		};
 
 		var page2 = {
-			type: `a`,
+			type: `button`,
 			attributes: {class: `nav-page2`},
 			styles: {gridArea: `two`},
 			text: `Code`
 		};
 
 		var page3 = {
-			type: `a`,
+			type: `button`,
 			attributes: {class: `nav-page3`},
 			styles: {gridArea: `three`},
 			text: `Resume`
