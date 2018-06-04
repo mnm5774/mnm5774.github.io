@@ -112,9 +112,9 @@ var controllers = {
 		var logoE = MM (content.logo).newElement ();
 		var logoPicE = MM (content.logoPic).newElement ();
 		
-		var page1E = MM (content.page1).newElement ();
-		var page2E = MM (content.page2).newElement ();
-		var page3E = MM (content.page3).newElement ();
+		var page1E = MM (content.page1).applyStyles (content.linkSty).newElement ();
+		var page2E = MM (content.page2).applyStyles (content.linkSty).newElement ();
+		var page3E = MM (content.page3).applyStyles (content.linkSty).newElement ();
 		
 		
 		// Makes navbar interactive to top of the window.
