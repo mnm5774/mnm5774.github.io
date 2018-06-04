@@ -121,27 +121,23 @@ var controllers = {
 		//var page2E = MM (content.page2).applyStyles (content.linkSty).newElement ();
 		//var page3E = MM (content.page3).applyStyles (content.linkSty).newElement ();
 		
-		var links = {
+		var links = [
 			content.logo, content.page1, content.page2, content.page3
-		};
+		];
 		
 		// Later on, if I add dropdowns to the navbar, I can add functionality based
 		// on children objects here. I might even break things up into different
 		// controllers.
-		function handleLinks (obj) {
-			for (var link in obj) {
-				var o = MM (link).applyStyles (content.linkSty);
-				var e = o.newElement ();
-				
-				e.addEventListener (`mouseover`, function () {
-					o.addStyles (content.hoverSty)
-				});
-				
-				containerE.append (e);
-			};
+		links.foreach (function (link) {
+			var o = MM (link).applyStyles (content.linkSty);
+			var e = o.newElement ();
+			
+			e.addEventListener (`mouseover`, function () {
+				o.addStyles (content.hoverSty)
+			});
+			
+			containerE.append (e);
 		};
-						    
-		handleLinks (links);
 		
 		
 		// Makes navbar interactive to top of the window.
