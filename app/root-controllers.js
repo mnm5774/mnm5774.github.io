@@ -128,7 +128,7 @@ var controllers = {
 		// Later on, if I add dropdowns to the navbar, I can add functionality based
 		// on children objects here. I might even break things up into different
 		// controllers.
-		links.foreach (function (link) {
+		links.forEach (function (link) {
 			var o = MM (link).applyStyles (content.linkSty);
 			var e = o.newElement ();
 			
