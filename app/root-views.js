@@ -15,7 +15,7 @@ in this context.
 var views = {
 	navbar: function (pageView, data, params) {
 		var pageView = pageView;
-		utils.request (pageView);
+		utils.request ('navbar');
 	},
 
 	home: function (page_view, data, params) {
