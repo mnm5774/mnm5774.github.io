@@ -122,7 +122,7 @@ var controllers = {
 		//var page3E = MM (content.page3).applyStyles (content.linkSty).newElement ();
 		
 		var links = {
-			l: content.logo, 1: content.page1, 2: content.page2, 3: content.page3
+			content.logo, content.page1, content.page2, content.page3
 		};
 		
 		// Later on, if I add dropdowns to the navbar, I can add functionality based
