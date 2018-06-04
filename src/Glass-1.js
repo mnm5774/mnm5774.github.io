@@ -232,6 +232,7 @@ created 5-11.
 			console.log (this.styles);
 			for (var property in obj) {
 				this.element.style [property] = this.styles [property];
+				console.log (property);
 			}
 		}
 	};
