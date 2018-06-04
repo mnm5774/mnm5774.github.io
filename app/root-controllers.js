@@ -109,7 +109,7 @@ var controllers = {
 		// Here we differentiate between the object and the element, for access
 		// to functionality after the element is inserted.
 		var containerE = containerO.newElement ();
-		var logoE = MM (content.logo).newElement ();
+		var logoE = MM (content.logo).applyStyles (content.linkSty).newElement ();
 		var logoPicE = MM (content.logoPic).newElement ();
 		
 		// For large sets of items we can create a for-in loop for an object,
