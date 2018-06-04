@@ -125,6 +125,9 @@ var controllers = {
 			l: content.logo, 1: content.page1, 2: content.page2, 3: content.page3
 		};
 		
+		// Later on, if I add dropdowns to the navbar, I can add functionality based
+		// on children objects here. I might even break things up into different
+		// controllers.
 		function handleLinks (obj) {
 			for (var link in obj) {
 				var o = MM (link).applyStyles (content.linkSty);
