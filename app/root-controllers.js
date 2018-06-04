@@ -109,15 +109,34 @@ var controllers = {
 		// Here we differentiate between the object and the element, for access
 		// to functionality after the element is inserted.
 		var containerE = containerO.newElement ();
-		var logoE = MM (content.logo).applyStyles (content.linkSty).newElement ();
+		//var logoE = MM (content.logo).applyStyles (content.linkSty).newElement ();
 		var logoPicE = MM (content.logoPic).newElement ();
+		
+		containerE.append (logoPicE);
 		
 		// For large sets of items we can create a for-in loop for an object,
 		// to handle the repetition here. I did it this way to provide visibility
 		// for now, while I finish determining my structure.
-		var page1E = MM (content.page1).applyStyles (content.linkSty).newElement ();
-		var page2E = MM (content.page2).applyStyles (content.linkSty).newElement ();
-		var page3E = MM (content.page3).applyStyles (content.linkSty).newElement ();
+		//var page1E = MM (content.page1).applyStyles (content.linkSty).newElement ();
+		//var page2E = MM (content.page2).applyStyles (content.linkSty).newElement ();
+		//var page3E = MM (content.page3).applyStyles (content.linkSty).newElement ();
+		
+		var links = {
+			l: content.logo, 1: content.page1, 2: content.page2, 3: content.page3
+		};
+		
+		function handleLinks (obj) {
+			for (var link in obj) {
+				var o = MM (link).applyStyles (content.linkSty);
+				var e = o.newElement ();
+				
+				e.addEventListener (`mouseover`, function () {
+					o.addStyles (content.hoverSty)
+				};
+			};
+		};
+						    
+		handleLinks (links);
 		
 		
 		// Makes navbar interactive to top of the window.
