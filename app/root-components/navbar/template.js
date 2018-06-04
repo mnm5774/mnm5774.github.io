@@ -13,7 +13,6 @@ var navbarTemplates = {
 				justifyContent: `center`,
 				overflow: `hidden`,
 				backgroundColor: `black`,
-				fontSize: `2.0vw`
 			}
 		};
 
@@ -69,6 +68,7 @@ var navbarTemplates = {
 			alignSelf: `center`,
 			color: `snow`,
 			padding: `10px`,
+			fontSize: `2.0vw`,
 			fontFamily: `TimesNewRoman`
 		};
 
