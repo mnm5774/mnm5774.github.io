@@ -137,7 +137,7 @@ var controllers = {
 			});
 			
 			containerE.append (e);
-		};
+		});
 		
 		
 		// Makes navbar interactive to top of the window.
