@@ -132,7 +132,7 @@ var controllers = {
 				
 				e.addEventListener (`mouseover`, function () {
 					o.addStyles (content.hoverSty)
-				};
+				});
 			};
 		};
 						    
