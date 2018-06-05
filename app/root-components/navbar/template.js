@@ -66,7 +66,7 @@ var navbarTemplates = {
 			backgroundColor: `black`,
 			border: `3px`,
 			borderColor: `darkgoldenrod`,
-			borderWidth: `hidden outset hidden outset`,
+			borderStyle: `hidden outset hidden outset`,
 			textAlign: `center`,
 			textDecoration: `none`,
 			alignSelf: `center`,
