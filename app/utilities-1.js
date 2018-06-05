@@ -58,10 +58,11 @@ Will also want to research handling URLs, and bookmarks for requesting content h
 */
 
 var utils = (function () {
-	/* cleaning utils up.
+	// cleaning utils up.
   var extract_params = function (params_string) {
+	  console.log (location);
 
-    var params = {};
+    /*var params = {};
     var raw_params = params_string.split ('&');
         
     var j = 0;
@@ -81,8 +82,8 @@ var utils = (function () {
     };
 
     //console.log ('post-parameters:  ' + params);
-    return params;
-  };*/
+    return params;*/
+  };
 
     // invoked on page load.
     return {
@@ -90,6 +91,8 @@ var utils = (function () {
         router: function (route, data) {
         	// this sets the default route, when no route is passed.
             route = route || location.hash.slice(1) || 'home';
+		extract_params ();
+		
 
             // cookies?
             var temp = route.split ('?');
