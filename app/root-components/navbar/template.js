@@ -17,8 +17,8 @@ var navbarTemplates = {
 		};
 
 		var logo = {
-			type: `button`,
-			attributes: {type: `button`, class: `nav-logo`, href: `#home`},
+			type: `a`,
+			attributes: {type: `button`, class: `nav-logo`, href: `#`},
 			styles: {gridArea: `logo`},
 			text: `Marc McKinnis | Portfolio`
 		};
@@ -27,7 +27,7 @@ var navbarTemplates = {
 			type: `img`,
 			attributes: {
 				class: `nav-pic`,
-				href: `#page1-home`,
+				href: `#`,
 				src: `photos-lowres/profile.jpg`,
 				alt: `profile`
 			},
@@ -42,22 +42,22 @@ var navbarTemplates = {
 		};
 
 		var page1 = {
-			type: `button`,
-			attributes: {type: `button`, class: `nav-page1`},
+			type: `a`,
+			attributes: {type: `button`, class: `nav-page1`, href: `#`},
 			styles: {gridArea: `home`},
 			text: `Home`
 		};
 
 		var page2 = {
-			type: `button`,
-			attributes: {type: `button`, class: `nav-page2`},
+			type: `a`,
+			attributes: {type: `button`, class: `nav-page2`, href: `#`},
 			styles: {gridArea: `two`},
 			text: `Code`
 		};
 
 		var page3 = {
-			type: `button`,
-			attributes: {type: `button`, class: `nav-page3`},
+			type: `a`,
+			attributes: {type: `button`, class: `nav-page3`, href: `#`},
 			styles: {gridArea: `three`},
 			text: `Resume`
 		};
