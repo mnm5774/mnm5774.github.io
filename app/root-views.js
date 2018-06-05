@@ -11,6 +11,10 @@ larger tasks, closer to the browser. For instance, handling direct navigation vi
 URL, or directing requests via events on the client browser. Not sure yet if this
 is how things are structured in more established environments, but it seems to work
 in this context.
+
+6-5-18: Also, I think it will be best practice for each view to have a unique URL in
+the site. This allows for bookmarking, and clears up some issues with navigation for
+the client.
 */
 var views = {
 	navbar: function (pageView, data, params) {
