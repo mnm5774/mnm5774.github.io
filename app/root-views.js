@@ -14,7 +14,9 @@ in this context.
 
 6-5-18: Also, I think it will be best practice for each view to have a unique URL in
 the site. This allows for bookmarking, and clears up some issues with navigation for
-the client.
+the client. I would provide this, except that github's server is what receives the
+request via the URL. So I can't manipulate action taken on the URL pathname property.
+I might be able to on the hash property though.
 */
 var views = {
 
