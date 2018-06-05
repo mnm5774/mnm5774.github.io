@@ -17,11 +17,9 @@ the site. This allows for bookmarking, and clears up some issues with navigation
 the client.
 */
 var views = {
-	/*navbar: function (pageView, data, params) {
-		var pageView = pageView;
-		utils.request ('navbar');
-	},*/
 
+	// I need a default view to invoke on page-load, for elements that will remain on
+	// the page, regardless of what the client does on the site.
 	home: function (page_view, data, params) {
 		var page_view = page_view || 'home';
 	    // var api_stub = 'posts/index.json'; not needed. not sure, but I think this
@@ -46,9 +44,4 @@ var views = {
 		var pageView = pageView;
 		utils.request (pageView);
 	}
-
-	/*footer: function (pageView, data, params) {
-		var pageView = pageView;
-		utils.request (pageView);
-	}*/
 };
