@@ -31,6 +31,15 @@ principles.
 a page view, which invokes a request, or go straight to the controller through the request.
 Here is where we need to parse the URL, and return the correct page view, on the page-load.
 
+The HTTP request is the initial point of contact between the client and the server. Because
+I'm currently hosting this on github, I don't have to worry about this. Github handles
+the request and defaults to loading my index.html file. So I want to invoke router on load
+of that page. If I setup a node.js server later, I will want to understand this more,
+(maybe invoke the router on the request, instead of load of a file),so I can customize and
+determine how the http request is handled.
+
+
+
 
 */
 
