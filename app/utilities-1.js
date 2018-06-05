@@ -27,6 +27,13 @@ and understand how my SPA should be set up, I may need to change some of these
 principles.
 */
 
+/* 6-5-18: High overview: First, the router is invoked, which determines whether to invoke
+a page view, which invokes a request, or go straight to the controller through the request.
+Here is where we need to parse the URL, and return the correct page view, on the page-load.
+
+
+*/
+
 
 var version = 1.0;
 
@@ -170,17 +177,6 @@ var utils = (function () {
             // this is causing some bugginess right now.
             // document.getElementById (element_id).scrollIntoView ();
         },
-
-
-
-        /* for getting external content-probably doesn't belong in utils.
-	get_link: function (post) {
-            var link = '#post?' + post.post;
-            if (post.external_link) {
-                link = post.external_link;
-            }
-            return link;
-        }*/
     }
 })();
 
