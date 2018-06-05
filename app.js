@@ -6,7 +6,7 @@ So the purpose of this file, for now, will be handling the root event listeners,
 and handling the URL requests as I learn more about that.
 */
 
-
+window.addEventListener ('hashchange', utils.router (location.hash);
 
 /*
 // For sticky navbar.
