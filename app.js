@@ -6,6 +6,11 @@ So the purpose of this file, for now, will be handling the root event listeners,
 and handling the URL requests as I learn more about that.
 */
 
+// href attribute will change the hash, firing the event and allowing direct
+// navigation. we can't use pathname right now because github's server is
+// handling that part of the navigation. # hash shows it is on the same page,
+// so we can use that event to fire page-views, for multiple pages using
+// the same html file.
 window.addEventListener ('hashchange', utils.router (location.hash);
 
 /*
