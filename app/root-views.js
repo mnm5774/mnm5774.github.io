@@ -20,6 +20,12 @@ var views = {
 
 	// I need a default view to invoke on page-load, for elements that will remain on
 	// the page, regardless of what the client does on the site.
+	rootView: function () {
+		utils.request (`navbar`);
+		utils.request (`defaultHero`);
+		utils.request (`footer`);
+	},
+	
 	home: function (page_view, data, params) {
 		var page_view = page_view || 'home';
 	    // var api_stub = 'posts/index.json'; not needed. not sure, but I think this
@@ -29,10 +35,8 @@ var views = {
 
 	    // invoke a request to the API.
 	    //utils.request (page_view, api_stub, 'show_all_posts', 'show_all_posts_error');
-		utils.request ('navbar');
 		utils.request ('homeHero');
 		utils.request ('homeContent');
-		utils.request ('footer');
 	},
 
 	code: function (pageView, data, params) {
