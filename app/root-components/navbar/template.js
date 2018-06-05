@@ -64,14 +64,14 @@ var navbarTemplates = {
 
 		var linkSty = {
 			backgroundColor: `black`,
+			border: `4px solid gold`,
 			textAlign: `center`,
 			textDecoration: `none`,
 			alignSelf: `center`,
 			color: `snow`,
 			padding: `10px`,
 			fontSize: `2.0vw`,
-			fontFamily: `TimesNewRoman`,
-			border: `4px solid black`
+			fontFamily: `TimesNewRoman`
 		};
 
 		var hoverSty = {
