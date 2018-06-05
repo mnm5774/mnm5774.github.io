@@ -109,17 +109,9 @@ var controllers = {
 		// Here we differentiate between the object and the element, for access
 		// to functionality after the element is inserted.
 		var containerE = containerO.newElement ();
-		//var logoE = MM (content.logo).applyStyles (content.linkSty).newElement ();
 		var logoPicE = MM (content.logoPic).newElement ();
 		
 		containerE.append (logoPicE);
-		
-		// For large sets of items we can create a for-in loop for an object,
-		// to handle the repetition here. I did it this way to provide visibility
-		// for now, while I finish determining my structure.
-		//var page1E = MM (content.page1).applyStyles (content.linkSty).newElement ();
-		//var page2E = MM (content.page2).applyStyles (content.linkSty).newElement ();
-		//var page3E = MM (content.page3).applyStyles (content.linkSty).newElement ();
 		
 		var links = [
 			content.logo, content.page1, content.page2, content.page3
@@ -154,9 +146,6 @@ var controllers = {
 		};
 		
 		window.addEventListener (`scroll`, checkNav);
-		
-		
-		//containerE.append (logoE, logoPicE, page1E, page2E, page3E);
 		
 		utils.render (navId, containerE);
 	},
