@@ -136,6 +136,10 @@ var controllers = {
 				o.addStyles (content.hoverSty)
 			});
 			
+			e.addEventListener (`mouseout`, function () {
+				o.removeStyles (content.hoverSty)
+			});
+			
 			containerE.append (e);
 		});
 		
