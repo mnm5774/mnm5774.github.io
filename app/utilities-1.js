@@ -69,6 +69,8 @@ var utils = (function () {
 			
 			var requestedView = route;
 		if (requestedView === `/`) {requestedView = `home`};
+		
+		console.log (requestedView);
 			
 			// Invoke the view requested. I removed a lot of code here. Don't
 			// have a use for it now, but I may need to look it up later.
