@@ -53,66 +53,29 @@ that for the default page/view/controller to invoke as we go. That way if there'
 something wrong in the routing, and invocation of the API, we will know. Probably
 will need to include a link back to the home page, and maybe need to throw an error
 in the console for reference in where the error occurred in the flow of things.
-
-Will also want to research handling URLs, and bookmarks for requesting content here.
 */
 
 var utils = (function () {
-	// cleaning utils up.
-  var extract_params = function (params_string) {
-	  console.log (location);
-
-    /*var params = {};
-    var raw_params = params_string.split ('&');
-        
-    var j = 0;
-    for (var i = raw_params.length - 1; i >= 0; i--) {
-      var url_params = raw_params [i].split ('=');
-
-      if (url_params.length == 2) {
-        params [url_params [0]] = url_params [1];
-      }
-      else if (url_params.length == 1) {
-        params [j] = url_params [0];
-        j += 1;
-      }
-      else {
-       // param not readable. pass.
-      }
-    };
-
-    //console.log ('post-parameters:  ' + params);
-    return params;*/
-  };
-
-    // invoked on page load.
-    return {
-	// first function invoke. universally, how the front-end contacts the back-end.
-        router: function (route, data) {
-        	// this sets the default route, when no route is passed.
-            route = route || location.hash.slice(1) || 'home';
-		extract_params ();
+	// Invoked on page load.
+	return {
 		
-
-            // cookies?
-            var temp = route.split ('?');
-            var route_split = temp.length;
-            var function_to_invoke = temp [0] || false;
-            // this may be only for handling multiple routes.
-            if (route_split > 1) {
-                var params  = extract_params (temp [1]);
-            }
-
-            // console.log (function_to_invoke); output: 'home'
-            // fire away... /invoke the view with any data that was passed to the
-            // router, along with extra parameters if present.
-            //console.log (function_to_invoke)
-            if (function_to_invoke) {
-                views [function_to_invoke] (function_to_invoke, data, params);
-            }
-        },
+		
+	// First function invoke. universally, how the front-end contacts the back-end.
+  	router: function (route, data) {
+    	// This sets the default route, when no route is passed.
+			// When no argument is passed, look for the path name in the URL.
+    	route = route || location.pathname || '/404';
+			console.log (route)
+			
+			var requestedView = route;
+			
+			// Invoke the view requested. I removed a lot of code here. Don't
+			// have a use for it now, but I may need to look it up later.
+			views [requestedView] ();
+		},
 	    
-	request: function (controller_to_invoke, api_stub, success_callback, error_callback,
+		
+		request: function (controller_to_invoke, api_stub, success_callback, error_callback,
                           callback_params) {
         // these are not important, or used currently. Once again, I think this is for
           // external requests.
