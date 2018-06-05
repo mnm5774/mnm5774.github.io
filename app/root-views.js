@@ -17,10 +17,10 @@ the site. This allows for bookmarking, and clears up some issues with navigation
 the client.
 */
 var views = {
-	navbar: function (pageView, data, params) {
+	/*navbar: function (pageView, data, params) {
 		var pageView = pageView;
 		utils.request ('navbar');
-	},
+	},*/
 
 	home: function (page_view, data, params) {
 		var page_view = page_view || 'home';
@@ -31,8 +31,10 @@ var views = {
 
 	    // invoke a request to the API.
 	    //utils.request (page_view, api_stub, 'show_all_posts', 'show_all_posts_error');
+		utils.request ('navbar');
 		utils.request ('homeHero');
 		utils.request ('homeContent');
+		utils.request ('footer');
 	},
 
 	code: function (pageView, data, params) {
@@ -43,10 +45,10 @@ var views = {
 	resume: function (pageView, data, params) {
 		var pageView = pageView;
 		utils.request (pageView);
-	},
+	}
 
-	footer: function (pageView, data, params) {
+	/*footer: function (pageView, data, params) {
 		var pageView = pageView;
 		utils.request (pageView);
-	}
+	}*/
 };
