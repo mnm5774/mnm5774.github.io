@@ -11,7 +11,7 @@ and handling the URL requests as I learn more about that.
 // handling that part of the navigation. # hash shows it is on the same page,
 // so we can use that event to fire page-views, for multiple pages using
 // the same html file.
-window.addEventListener ('hashchange', utils.router (location.hash);
+window.addEventListener ('hashchange', utils.router (location.hash));
 
 /*
 // For sticky navbar.
