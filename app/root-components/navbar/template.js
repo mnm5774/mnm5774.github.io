@@ -63,13 +63,15 @@ var navbarTemplates = {
 		};
 
 		var linkSty = {
+			backgroundColor: `black`,
 			textAlign: `center`,
 			textDecoration: `none`,
 			alignSelf: `center`,
 			color: `snow`,
 			padding: `10px`,
 			fontSize: `2.0vw`,
-			fontFamily: `TimesNewRoman`
+			fontFamily: `TimesNewRoman`,
+			border: `4px solid black`
 		};
 
 		var hoverSty = {
