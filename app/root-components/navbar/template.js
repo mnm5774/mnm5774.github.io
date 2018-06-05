@@ -64,8 +64,6 @@ var navbarTemplates = {
 
 		var linkSty = {
 			backgroundColor: `black`,
-			borderWidth: `0px 2px 0px 2px`,
-			borderColor: `darkgoldenrod`,
 			textAlign: `center`,
 			textDecoration: `none`,
 			alignSelf: `center`,
