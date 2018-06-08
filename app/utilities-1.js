@@ -74,8 +74,8 @@ var utils = (function () {
 			
 			// Invoke the view requested. I removed a lot of code here. Don't
 			// have a use for it now, but I may need to look it up later.
-			views [requestedView] ();
 			console.log ('router ' + requestedView);
+			views [requestedView] ();
 		},
 	    
 		
