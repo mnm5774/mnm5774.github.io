@@ -60,9 +60,9 @@ updated parameters.
 // rather than returning the child, it will insert it. I think I will have to
 // separate components based on their function, child elements or standalone
 // components that are inserted.
-var heroId = `hero`;
-var navId = `navbar`;
-var bodyId = `body`;
+var heroId = `#hero`;
+var navId = `#navbar`;
+var bodyId = `#body`;
 
 var controllers = {
 	defaultHero: function () {
@@ -74,7 +74,7 @@ var controllers = {
 		
 		containerE.append (titleE, descriptionE);
 		
-		utils.render (heroId, containerE);
+		utils.render (heroId, containerE, true);
 	},
 	
 	
@@ -99,7 +99,7 @@ var controllers = {
 		
 		containerE.append (headerE, introP1E, introP2E, aboutE, fillerE);
 		
-		utils.render (bodyId, containerE);
+		utils.render (bodyId, containerE, true);
 	},
 	
 	navbar: function (data, params) {
@@ -147,6 +147,7 @@ var controllers = {
 		
 		window.addEventListener (`scroll`, checkNav);
 		
+		// should only be called once, no need to replace.
 		utils.render (navId, containerE);
 	},
 	
@@ -179,7 +180,7 @@ var controllers = {
 		var js30 = page2Templates.js30 ();
 		var finalContent = js30;
 
-		utils.render ('body', finalContent);
+		utils.render ('body', finalContent, true);
 	},
 
 	resume: function (data, params) {
@@ -189,7 +190,7 @@ var controllers = {
 		//console.log (resume);
 		var finalContent = resume;
 
-		utils.render ('body', finalContent);
+		utils.render ('body', finalContent, true);
 	},
 
 	footer: function (data, params) {
@@ -199,6 +200,7 @@ var controllers = {
 		var finalContent = footerContent;
 
 		//console.log ('footer is grabbed, and ready to invoke render!');
+		// also only called once.
 		utils.render ('footer', finalContent);
 	}
 };
