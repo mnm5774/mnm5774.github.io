@@ -65,18 +65,17 @@ var utils = (function () {
     	// This sets the default route, when no route is passed.
 			// When no argument is passed, look for the path name in the URL.
     	route = route || location.pathname || '/404';
-			console.log (route)
 			
 			var requestedView = route;
 		if (requestedView === `/`) {requestedView = `home`};
 		
-		console.log (requestedView);
 		
 		if (!views [requestedView]) {console.log ('404-not found! sorry!')};
 			
 			// Invoke the view requested. I removed a lot of code here. Don't
 			// have a use for it now, but I may need to look it up later.
 			views [requestedView] ();
+			console.log ('router ' + requestedView);
 		},
 	    
 		
@@ -88,6 +87,7 @@ var utils = (function () {
 		request: function (controller_to_invoke, api_stub, success_callback, error_callback,
                           callback_params) {
 			      controllers [controller_to_invoke] ();
+			console.log ('request ' + controller_to_invoke);
         },
 
 	    // final request, actually rendering the new content on the page.
@@ -111,24 +111,6 @@ var utils = (function () {
 		
 		if (replace) {replaceContent ()}
 			else {appendContent ()};
-		
-			
-		
-		
-            /*convert_markdown = convert_markdown || false;
-           	//console.log ('the container content is being inserted into : ' + element_id);
-
-            if (!convert_markdown) {
-                document.getElementById (element_id).append (content);
-            }
-            // not sure yet what convert_markdown is used for, but we pass it in the
-            // controller. showdown is not defined as well?
-            else {
-                var converter = new showdown.Converter ();
-                document.getElementById (element_id).innerHTML = converter.makeHtml (content);   
-            }
-            // this is causing some bugginess right now.
-            // document.getElementById (element_id).scrollIntoView ();*/
         },
     }
 })();
