@@ -82,6 +82,9 @@ var utils = (function () {
 		
 		// Call requests for controllers from the page-view. The controller will determine
 		// what content will be inserted where on the page.
+		// Originally, the api requests were being handled here. I may need to rethink this later,
+		// depending on how things should be done with my structure. doing this in controllers
+		// for now.
 		request: function (controller_to_invoke, api_stub, success_callback, error_callback,
                           callback_params) {
 			      controllers [controller_to_invoke] ();
@@ -89,8 +92,30 @@ var utils = (function () {
 
 	    // final request, actually rendering the new content on the page.
 	    // here is where we determine where the content will be inserted.
-        render: function (element_id, content, convert_markdown) {
-            convert_markdown = convert_markdown || false;
+		// I also need to determine if we are replacing content, or just
+		// inserting new content.
+        render: function (container, content, replace) {
+		// in the futuer we can use .prepend to insert a child at beginning of the container.
+		replace = replace || false;
+		
+		// for now we only replace one element with the component.
+		function replaceContent () {
+			var insert = document.querySelector (container);
+			insert.replaceChild (content, insert.children [0]);
+		};
+		
+		function appendContent () {
+			var insert = document.querySelector (container);
+			insert.append (content);
+		};
+		
+		if (replace) {replaceContent ()}
+			else {appendContent ()};
+		
+			
+		
+		
+            /*convert_markdown = convert_markdown || false;
            	//console.log ('the container content is being inserted into : ' + element_id);
 
             if (!convert_markdown) {
@@ -103,7 +128,7 @@ var utils = (function () {
                 document.getElementById (element_id).innerHTML = converter.makeHtml (content);   
             }
             // this is causing some bugginess right now.
-            // document.getElementById (element_id).scrollIntoView ();
+            // document.getElementById (element_id).scrollIntoView ();*/
         },
     }
 })();
