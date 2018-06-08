@@ -138,7 +138,7 @@ var controllers = {
 		
 		// Makes navbar interactive to top of the window.
 		function checkNav () {
-			var hero = document.getElementById (heroId);
+			var hero = document.querySelector (heroId);
 			var navStuckAt = window.scrollY > hero.offsetHeight;
 			
 			if (navStuckAt) {containerO.addStyles (content.stickySty)}
