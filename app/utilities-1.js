@@ -80,63 +80,11 @@ var utils = (function () {
 		},
 	    
 		
+		// Call requests for controllers from the page-view. The controller will determine
+		// what content will be inserted where on the page.
 		request: function (controller_to_invoke, api_stub, success_callback, error_callback,
                           callback_params) {
-        // these are not important, or used currently. Once again, I think this is for
-          // external requests.
-        	var controller_to_invoke = controller_to_invoke || 'home';
-            api_stub = api_stub || '';
-            callback_params = callback_params || {};
-            //console.log ('successfully invoked request api_stub:  ' + api_stub);
-
-            //i'm wondering if this is for a loading spinner.
-            //controllers.show_loader('page-content');
-
-            //controllers.home ('page-content');
-
-            /* /this is the part that I don't fully understand. How does the request know which
-            controller to invoke, depending on the component requested? controllers.showloader
-            was the original invocation. I think I'm going to try and pass the page as an
-            argument on down to determine the correct controller. Kind of like how we invoke
-            the view.
-            */
-
-			      // ok here we go. - this works.
-		// call the controller requested for internally stored content.
 			      controllers [controller_to_invoke] ();
-		
-		// make a request for externally stored content, determined by the view.
-            //external server request? not currently being used.
-		/* this probably should take place in the controller, not utils. I think
-		the controller will be the central place for requesting external content.
-		this will allow internal and external content to be integrated with each
-		other seamlessly, depending completely on the controller for that particular
-		component, allowing for customization.
-		*/
-            //var url = config.api_server + api_stub;
-
-            var x = new XMLHttpRequest ();
-            x.onreadystatechange = function () {
-                if (x.readyState == XMLHttpRequest.DONE) {
-                    if (x.status == 200) {
-                        controllers [success_callback] (
-                            x.responseText, 
-                            callback_params
-                        );
-                        console.log ('successful request')
-                    }
-                    else {
-                        controllers [error_callback] (
-                            x.status, 
-                            callback_params
-                        );
-                        console.log ('failure at request');
-                    }
-                }
-            };
-            // other methods can be implemented here
-            // x.open ('GET', url, true);
-            // x.send ();
         },
 
 	    // final request, actually rendering the new content on the page.
